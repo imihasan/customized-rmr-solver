@@ -88,9 +88,10 @@ model_temp = model_original.clone();
 % get the glenohumeral joint
 alljoints = model_temp.getJointSet;
 glen = alljoints.get('GlenoHumeral');
+Lglen = alljoints.get('LGlenoHumeral'); %Read the left Glenohumeral Joint As well
 
 state = model_temp.initSystem();
-[maxAngle, ~] = get_glenoid_status(model_temp, state); % the value for maxAngle can also be given directly by the user
+[maxAngle, LmaxAngle,~,~] = get_glenoid_status(model_temp, state); % the value for maxAngle can also be given directly by the user
 
 %% Load the trc file to be considered, if the input is a trc file, and perform IK
 if trc_file
@@ -109,15 +110,28 @@ if trc_file
     % getting the values of default scapula coordinate 
     % we get the values of the coordinates describing the scapula position from 
     % the general model in default pose
-    scapula_abd = model_temp.getJointSet().get(2).get_coordinates(0);
-    scapula_ele = model_temp.getJointSet().get(2).get_coordinates(1);
-    scapula_urt = model_temp.getJointSet().get(2).get_coordinates(2);
-    scapula_wng = model_temp.getJointSet().get(2).get_coordinates(3);
+    %Right
+    scapula_abd = model_temp.getJointSet().get("scapulothoracic").get_coordinates(0);
+    scapula_ele = model_temp.getJointSet().get("scapulothoracic").get_coordinates(1);
+    scapula_urt = model_temp.getJointSet().get("scapulothoracic").get_coordinates(2);
+    scapula_wng = model_temp.getJointSet().get("scapulothoracic").get_coordinates(3);
     
     default_sa = scapula_abd.get_default_value();
     default_se = scapula_ele.get_default_value();
     default_su = scapula_urt.get_default_value();
     default_sw = scapula_wng.get_default_value();
+
+    %Left
+    Lscapula_abd = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(0);
+    Lscapula_ele = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(1);
+    Lscapula_urt = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(2);
+    Lscapula_wng = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(3);
+    
+    Ldefault_sa = Lscapula_abd.get_default_value();
+    Ldefault_se = Lscapula_ele.get_default_value();
+    Ldefault_su = Lscapula_urt.get_default_value();
+    Ldefault_sw = Lscapula_wng.get_default_value();
+
     
     % Performing IK
     % perform IK on the basis of marker data to retrieve the motion file for
@@ -136,19 +150,33 @@ if trc_file
     ikTool.setModel(model_temp);
     
     % set the reference values for the scapula coordinates (last 4 tasks)
-    num_IK_tasks = ikTool.getIKTaskSet.getSize();
+    %num_IK_tasks = ikTool.getIKTaskSet.getSize(); %No need for that, tasks are called by their names instead
     
     % set the weight of each coordinate in the tracking tasks
-    ikTool.getIKTaskSet.get(num_IK_tasks-4).setWeight(weight_coord(1));
-    ikTool.getIKTaskSet.get(num_IK_tasks-3).setWeight(weight_coord(2));
-    ikTool.getIKTaskSet.get(num_IK_tasks-2).setWeight(weight_coord(3));
-    ikTool.getIKTaskSet.get(num_IK_tasks-1).setWeight(weight_coord(4));
+    %Right
+    ikTool.getIKTaskSet.get("scapula_abduction").setWeight(weight_coord(1));
+    ikTool.getIKTaskSet.get("scapula_elevation").setWeight(weight_coord(2));
+    ikTool.getIKTaskSet.get("scapula_upward_rot").setWeight(weight_coord(3));
+    ikTool.getIKTaskSet.get("scapula_winging").setWeight(weight_coord(4));
+
+    %Left
+    ikTool.getIKTaskSet.get("Lscapula_abduction").setWeight(weight_coord(1));
+    ikTool.getIKTaskSet.get("Lscapula_elevation").setWeight(weight_coord(2));
+    ikTool.getIKTaskSet.get("Lscapula_upward_rot").setWeight(weight_coord(3));
+    ikTool.getIKTaskSet.get("Lscapula_winging").setWeight(weight_coord(4));
     
     % set also the values here
-    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get(num_IK_tasks-4)).setValue(default_sa);
-    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get(num_IK_tasks-3)).setValue(default_se);
-    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get(num_IK_tasks-2)).setValue(default_su);
-    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get(num_IK_tasks-1)).setValue(default_sw);
+    %Right
+    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("scapula_abduction")).setValue(default_sa);
+    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("scapula_elevation")).setValue(default_se);
+    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("scapula_upward_rot")).setValue(default_su);
+    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("scapula_winging")).setValue(default_sw);
+
+    %Left
+    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("Lscapula_abduction")).setValue(Ldefault_sa);
+    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("Lscapula_elevation")).setValue(Ldefault_se);
+    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("Lscapula_upward_rot")).setValue(Ldefault_su);
+    IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("Lscapula_winging")).setValue(Ldefault_sw);
     ikTool.print('RMR_autogenerated_IK_setup.xml');
     
     ikTool.run();
@@ -173,9 +201,9 @@ timeRange = [start_time end_time];
 
 % get the coordinates from the output of the IK in rad for the rotational
 % joints
-[coordinates, coordNames, timesExp] = loadFilterCropArray(motion_file_name, lowpassFreq, timeRange);
-coordinates(:, 1:3) = deg2rad(coordinates(:, 1:3));
-coordinates(:, 7:end) = deg2rad(coordinates(:, 7:end));
+[coordinates, coordNames, timesExp] = loadFilterCropArray(motion_file_name, lowpassFreq, timeRange); 
+coordinates(:, 1:3) = deg2rad(coordinates(:, 1:3)); 
+coordinates(:, 7:end) = deg2rad(coordinates(:, 7:end)); %******Coordinates here needs to be adjusted too *******%
 
 % get the velocities for each joint in rad/s
 time_step_data = timesExp(2)-timesExp(1);
@@ -287,13 +315,23 @@ fp = zeros(1, numMuscles);
 cosPenn = zeros(1, numMuscles);
 Fmax = zeros(1, numMuscles);
 A_eq_acc = zeros(numCoords,num_acts);
+LA_eq_acc = zeros(numCoords,num_acts); %Left
+
 A_eq_force = zeros(3, num_acts);
+LA_eq_force = zeros(3, num_acts); %Left
+
 xsol = zeros(numTimePoints, length(x0));
 simulatedAccelerations = zeros(numTimePoints, length(coordNames));
 optimizationStatus = cell(numTimePoints,1);
+
 norm_fv_in_ground = zeros(numTimePoints, 3);
+Lnorm_fv_in_ground = zeros(numTimePoints, 3); %Left
+
 norm_fv_rotated = zeros(numTimePoints, 3);
+Lnorm_fv_rotated = zeros(numTimePoints, 3); %Left
+
 rel_angle = zeros(numTimePoints,1);
+Lrel_angle = zeros(numTimePoints,1); %Left
 
 % get model quantities we still need
 coords = model_temp.getCoordinateSet();
@@ -356,7 +394,7 @@ for time_instant = 1:numTimePoints
 
     % get the vector Vec_H2GC between humeral head and the glenoid center
     % (it is expressed in the ground frame)
-    [~, Vec_H2GC] = get_glenoid_status(model_temp, state); 
+    [~,~,Vec_H2GC, LVec_H2GC] = get_glenoid_status(model_temp, state); %Left LVec_H2GC is called as output
     
     % store the values of active and passive maximum force in the current
     % configuration
@@ -379,16 +417,21 @@ for time_instant = 1:numTimePoints
     params.useControls = 1;
     params.modelControls = modelControls;
     params.glen = glen;
+    params.glen = Lglen; %Left 
 
-    [q_ddot_0, F_r0, ~] = findInducedAccelerationsForceMomentsGH(zeros(1,num_acts), params);
+    [q_ddot_0, F_r0, LF_r0,~,~] = findInducedAccelerationsForceMomentsGH(zeros(1,num_acts), params); %Get Left Forces in the output
     delQ_delX = eye(num_acts);
 
     for k = 1:num_acts
-        [incrementalForceAccel_k, F_rk, ~] = findInducedAccelerationsForceMomentsGH(delQ_delX(k,:),params);
+        [incrementalForceAccel_k, F_rk, LF_rk, ~, ~] = findInducedAccelerationsForceMomentsGH(delQ_delX(k,:),params); %Get Left Forces in the outpu
         kthColumn_A_eq_acc =  incrementalForceAccel_k - q_ddot_0;
         A_eq_acc(:,k) = kthColumn_A_eq_acc;
+
+        %Include the left side here too
         kthColumn_A_eq_force =  F_rk - F_r0;
+        LkthColumn_A_eq_force =  LF_rk - LF_r0; %Left Side
         A_eq_force(:,k) = kthColumn_A_eq_force;
+        LA_eq_force(:,k) = LkthColumn_A_eq_force; %Left Side
     end
 
     Beq = accelerations(time_instant,:)' - q_ddot_0;
@@ -405,10 +448,10 @@ for time_instant = 1:numTimePoints
 
     % Call FMINCON to solve the problem
     if flag_GH_enforced
-        [x,~,exitflag,output] = fmincon(cost, x0, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, maxAngle, A_eq_force, F_r0), options);
+        [x,~,exitflag,output] = fmincon(cost, x0, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, Vec_H2GC, maxAngle, LmaxAngle, A_eq_force, LA_eq_force, F_r0, LF_r0), options);
         if exitflag ==0
             % call the solver again, starting from current x, in case the maximum iterations are exceeded
-            [x,~,exitflag,output] = fmincon(cost, x, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, maxAngle, A_eq_force, F_r0), options);
+            [x,~,exitflag,output] = fmincon(cost, x, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, Vec_H2GC, maxAngle, LmaxAngle, A_eq_force, LA_eq_force, F_r0, LF_r0), options);
         end
         if exitflag<0 && time_instant>1
             % call the solver again, starting from previous optimum found,
@@ -465,23 +508,46 @@ for time_instant = 1:numTimePoints
         % retrieve the position of the joint reaction force on the approximated
         % glenoid computing the reaction force vector at the given joint
         % The force is expressed in the ground frame
+        %Right
         force_vec = A_eq_force * xsol(time_instant, :)' + F_r0;
+        %Left
+        Lforce_vec = LA_eq_force * xsol(time_instant, :)' + LF_r0;
         
         % evaluate the relative angle between the reaction force and Vec_H2GC
+        %Right
         cosTheta = max(min(dot(Vec_H2GC,force_vec)/(norm(Vec_H2GC)*norm(force_vec)),1),-1);
         rel_angle(time_instant) = real(acosd(cosTheta));
+        %Left
+        LcosTheta = max(min(dot(LVec_H2GC,Lforce_vec)/(norm(LVec_H2GC)*norm(Lforce_vec)),1),-1);
+        Lrel_angle(time_instant) = real(acosd(LcosTheta));
     
         % evaluate the position on the glenoid where reaction force is exerted
+        %Right
         norm_Vec_H2GC = Vec_H2GC/norm(Vec_H2GC);
         norm_fv_in_ground(time_instant,:) = force_vec/norm(force_vec);
-    
+        %Left
+        Lnorm_Vec_H2GC = LVec_H2GC/norm(LVec_H2GC);
+        Lnorm_fv_in_ground(time_instant,:) = Lforce_vec/norm(Lforce_vec);
+
+        %Right
         beta_angle = atan(norm_Vec_H2GC(3)/norm_Vec_H2GC(1));
         alpha_angle = atan(norm_Vec_H2GC(3)/(sin(beta_angle)*norm_Vec_H2GC(2)));
-    
+        %Left
+        Lbeta_angle = atan(Lnorm_Vec_H2GC(3)/Lnorm_Vec_H2GC(1));
+        Lalpha_angle = atan(Lnorm_Vec_H2GC(3)/(sin(Lbeta_angle)*Lnorm_Vec_H2GC(2)));
+
+        %Right
         Ry = [cos(beta_angle) 0 sin(beta_angle); 0 1 0; -sin(beta_angle) 0 cos(beta_angle)];
         Rz = [cos(alpha_angle) -sin(alpha_angle) 0; sin(alpha_angle) cos(alpha_angle) 0; 0 0 1];
+        %Left
+        LRy = [cos(Lbeta_angle) 0 sin(Lbeta_angle); 0 1 0; -sin(Lbeta_angle) 0 cos(Lbeta_angle)];
+        LRz = [cos(Lalpha_angle) -sin(Lalpha_angle) 0; sin(Lalpha_angle) cos(Lalpha_angle) 0; 0 0 1];
     
+        
+        %Right
         norm_fv_rotated(time_instant,:) = Rz*Ry*norm_fv_in_ground(time_instant,:)';
+        %Left
+        Lnorm_fv_rotated(time_instant,:) = LRz*LRy*Lnorm_fv_in_ground(time_instant,:)';
     end
 
     if (withviz == true)

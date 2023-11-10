@@ -1,4 +1,4 @@
-function [simulatedAccelerations, force, moment] = findInducedAccelerationsForceMomentsGH(x,params)
+function [simulatedAccelerations, force, Lforce, moment, Lmoment] = findInducedAccelerationsForceMomentsGH(x,params)
 % This function returns the simulated accelerations for each coordinate of
 % a Model, given the model state and the forces exerted by the Muscles (and
 % CoorindateActuators). It also returns the joint reaction force and moment 
@@ -47,6 +47,7 @@ coordNames = params.coordNames;
 muscles = params.muscles;
 numMuscles = params.numMuscles;
 glen = params.glen;
+Lglen = params.Lglen; %Call the Left Glenohumeral 
 useMuscles = params.useMuscles;
 useControls = params.useControls;
 
@@ -89,3 +90,6 @@ end
 % get moment and force at the GlenoHumeral joint
 moment = glen.calcReactionOnParentExpressedInGround(state).get(0).getAsMat();
 force = glen.calcReactionOnParentExpressedInGround(state).get(1).getAsMat();
+
+Lmoment = Lglen.calcReactionOnParentExpressedInGround(state).get(0).getAsMat();
+Lforce = Lglen.calcReactionOnParentExpressedInGround(state).get(1).getAsMat();
