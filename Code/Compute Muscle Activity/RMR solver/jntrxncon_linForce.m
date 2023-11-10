@@ -1,4 +1,4 @@
-function [c, ceq] = jntrxncon_linForce(x, directionVector, maxAngle, A_f, F_r0, GH_weight)
+function [c, ceq] = jntrxncon_linForce(x, directionVector, LdirectionVector, maxAngle,LmaxAngle, A_f, LA_f, F_r0, LF_r0, GH_weight)
 % This function, to be used within the optimizer FMINCON as the nonlinear
 % constraint, returns whether the joint reaction constraint force lies
 % inside a cone defined by maxAngle around the direction given by the
@@ -37,12 +37,20 @@ if nargin==5
 end
 
 % computing the reaction force vector at the given joint
+%Right
 force_vec = A_f * x' + F_r0;
+%Left
+Lforce_vec = LA_f * x' + LF_r0;
 
 % evaluate the relative angle between the reaction force and Vec_H2GC
+%Right
 cosTheta = max(min(dot(directionVector,force_vec)/(norm(directionVector)*norm(force_vec)),1),-1);
 rel_angle = real(acosd(cosTheta));
 
+%Left
+LcosTheta = max(min(dot(LdirectionVector,Lforce_vec)/(norm(LdirectionVector)*norm(Lforce_vec)),1),-1);
+Lrel_angle = real(acosd(LcosTheta));
+
 % value of the constraint violation
-c = GH_weight*((rel_angle/maxAngle)^2 - 1);             % direction must lie in a cone
-ceq = 0; 
+c = [GH_weight*((rel_angle/maxAngle)^2 - 1) GH_weight*((Lrel_angle/LmaxAngle)^2 - 1)];             % direction must lie in a cone
+ceq = [0 0]; 
