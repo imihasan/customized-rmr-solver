@@ -21,24 +21,19 @@ addpath(pathstr)
 cd ..\..\..\
 path_to_repo = pwd;
 addpath(path_to_repo)
-addpath(fullfile(path_to_repo, 'Code', 'Data Processing'))
+addpath(fullfile(path_to_repo, 'Code\Data Processing\'))
 
 % where you have the experimental files (.trc)
-trc_path = fullfile(path_to_repo, 'ExperimentalData', 'Markers');
+trc_path = fullfile(path_to_repo, 'ExperimentalData\Markers');
 
 % where to save the results
-saving_path = fullfile(path_to_repo, 'Personal_Results');
-
-
+saving_path = fullfile(path_to_repo, '\Personal_Results');
 % Select model
-modelFile_0kg = append(fullfile(path_to_repo, 'OpenSim Models', 'for RMR solver', 'TSM_subject_noWeight.osim'));
-model_0kg = Model(modelFile_0kg);
-
-modelFile_2kg = append(fullfile(path_to_repo, 'OpenSim Models', 'for RMR solver', 'TSM_subject_2kgWeight.osim'));
+modelFile_2kg = append(path_to_repo, '\OpenSim Models\for RMR solver\KTHUpperBodyModel_scaled.osim');
 model_2kg = Model(modelFile_2kg);
 
 % Select the experimental data to be considered
-dataset_considered = 'Seth2019';
+dataset_considered = 'Posture_Vista';
 
 [files,path] = uigetfile('*.trc', 'Select the .trc files to analyse', trc_path, 'MultiSelect','on');
 
