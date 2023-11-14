@@ -305,6 +305,7 @@ x0 = [0.1* ones(1,numMuscles), zeros(1,numCoordActs)];
 % We define the activation squared cost as a MATLAB anonymous function
 % It is model specific!
 epsilon = 0;
+%The Weighting Matrix needs to change. Dimensions are not consistent
 w = [ones(1,numMuscles), epsilon*ones(1,8), 10*ones(1,9)];     % the cost function is written such that it allows the use of coord acts for the underactuated coordinates
 cost =@(x) sum(w.*(x.^2));
 
