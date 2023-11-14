@@ -46,7 +46,6 @@ Lforce_vec = LA_f * x' + LF_r0;
 %Right
 cosTheta = max(min(dot(directionVector,force_vec)/(norm(directionVector)*norm(force_vec)),1),-1);
 rel_angle = real(acosd(cosTheta));
-
 %Left
 LcosTheta = max(min(dot(LdirectionVector,Lforce_vec)/(norm(LdirectionVector)*norm(Lforce_vec)),1),-1);
 Lrel_angle = real(acosd(LcosTheta));
