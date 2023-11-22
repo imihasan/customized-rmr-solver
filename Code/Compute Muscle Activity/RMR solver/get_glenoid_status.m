@@ -11,6 +11,8 @@ function [angle, Langle, Vec_H2GC, LVec_H2GC] = get_glenoid_status(model, state)
 %     be contained is returned
 % * Vec_H2GC: 3D vector defined between the humeral head center (origin)
 %     and the glenoid center. It is expressed in the ground frame
+%Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
+%KTH Royal Institute of Technology, Stockholm, Sweden.
 
 import org.opensim.modeling.*;
 

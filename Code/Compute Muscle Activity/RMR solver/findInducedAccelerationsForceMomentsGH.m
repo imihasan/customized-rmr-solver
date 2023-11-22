@@ -35,10 +35,11 @@ function [simulatedAccelerations, force, Lforce, moment, Lmoment] = findInducedA
 % Optimization case.
 %
 % author: Italo Belli (i.belli@tudelft.nl) june 2022
+%Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
+%KTH Royal Institute of Technology, Stockholm, Sweden.
 
 
 import org.opensim.modeling.*;
-
 model = params.model; 
 state = params.state;
 acts = params.acts;
@@ -66,12 +67,16 @@ end
 % Inizialize the CoordinateActuators to produce the required effect
 if ~useControls  % if we want to set the force
     for k = numMuscles+1:length(acts)
+        %if string(acts{k}.getConcreteClassName()) == "CoordinateActuator"
         acts{k}.setOverrideActuation(state, x(k));
+        %end
     end
 else             % if we want to set the controls
     modelControls = params.modelControls;
     for k = numMuscles+1:length(acts)
-        acts{k}.setControls(Vector(1, x(k)), modelControls);
+        %if string(acts{k}.getConcreteClassName()) == "CoordinateActuator"
+        acts{k}.setControls(Vector(1, x(k)), modelControls);                    %This part has been modified to ovverride actuation only of coordinate actuators
+        %end
     end
     model.realizeVelocity(state);
     model.setControls(state, modelControls);

@@ -1,4 +1,4 @@
-function [optimizationStatus, unfeasibility_flags, tOptim, file_results] = RMR_analysis(subject_considered, model_original, trc_file, motion_file, weight_coord, time_interval, dynamic_activation_bounds, flag_GH_enforced, saving_path)
+function [optimizationStatus, unfeasibility_flags, tOptim, file_results] = RMR_analysis(subject_considered, model_original, model_original2, trc_file, motion_file, weight_coord, time_interval, dynamic_activation_bounds, flag_GH_enforced, saving_path)
 % Rapid Muscle Redundancy (RMR) solver, leveraging OpenSim API.
 % Starting from experimental marker data (in .trc format) the optimal
 % muscle activations are found that can reproduce the motion, solving:
@@ -54,6 +54,9 @@ function [optimizationStatus, unfeasibility_flags, tOptim, file_results] = RMR_a
 % The function also saves plots of the analysis performed, and the muscle
 % activation variables (together with coordinate actuators controls) in a
 % .mat file
+% author: Italo Belli (i.belli@tudelft.nl) 2022
+%Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
+%KTH Royal Institute of Technology, Stockholm, Sweden.
 
 %% Import the OpenSim libraries.
 import org.opensim.modeling.*;
@@ -100,10 +103,10 @@ if trc_file
     start_time = timesExp(1);
     end_time =  timesExp(end);
     
-    % if strcmp(unitsExp, 'mm')
-    %     markersExp = markersExp/1000;
-    %     unitsExp = 'm';
-    % end
+    if strcmp(unitsExp, 'mm')
+        markersExp = markersExp/1000;
+        unitsExp = 'm';
+    end
     
     frequency_trc_data = 1/(timesExp(2)-timesExp(1));
 
@@ -111,26 +114,26 @@ if trc_file
     % we get the values of the coordinates describing the scapula position from 
     % the general model in default pose
     %Right
-    scapula_abd = model_temp.getJointSet().get("scapulothoracic").get_coordinates(0);
-    scapula_ele = model_temp.getJointSet().get("scapulothoracic").get_coordinates(1);
-    scapula_urt = model_temp.getJointSet().get("scapulothoracic").get_coordinates(2);
-    scapula_wng = model_temp.getJointSet().get("scapulothoracic").get_coordinates(3);
-    
-    default_sa = scapula_abd.get_default_value();
-    default_se = scapula_ele.get_default_value();
-    default_su = scapula_urt.get_default_value();
-    default_sw = scapula_wng.get_default_value();
-
-    %Left
-    Lscapula_abd = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(0);
-    Lscapula_ele = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(1);
-    Lscapula_urt = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(2);
-    Lscapula_wng = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(3);
-    
-    Ldefault_sa = Lscapula_abd.get_default_value();
-    Ldefault_se = Lscapula_ele.get_default_value();
-    Ldefault_su = Lscapula_urt.get_default_value();
-    Ldefault_sw = Lscapula_wng.get_default_value();
+    % scapula_abd = model_temp.getJointSet().get("scapulothoracic").get_coordinates(0);
+    % scapula_ele = model_temp.getJointSet().get("scapulothoracic").get_coordinates(1);
+    % scapula_urt = model_temp.getJointSet().get("scapulothoracic").get_coordinates(2);
+    % scapula_wng = model_temp.getJointSet().get("scapulothoracic").get_coordinates(3);
+    % 
+    % default_sa = scapula_abd.get_default_value();
+    % default_se = scapula_ele.get_default_value();
+    % default_su = scapula_urt.get_default_value();
+    % default_sw = scapula_wng.get_default_value();
+    % 
+    % %Left
+    % Lscapula_abd = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(0);
+    % Lscapula_ele = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(1);
+    % Lscapula_urt = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(2);
+    % Lscapula_wng = model_temp.getJointSet().get("Lscapulothoracic").get_coordinates(3);
+    % 
+    % Ldefault_sa = Lscapula_abd.get_default_value();
+    % Ldefault_se = Lscapula_ele.get_default_value();
+    % Ldefault_su = Lscapula_urt.get_default_value();
+    % Ldefault_sw = Lscapula_wng.get_default_value();
 
     
     % Performing IK
@@ -146,14 +149,18 @@ if trc_file
     ikTool.setOutputMotionFileName(fullfile(saving_path, motion_file_name));
     ikTool.set_report_marker_locations(1);
     ikTool.setStartTime(start_time);
-    ikTool.setEndTime(end_time);
+    %The end time is set to quarter of the total time. That's to run a
+    %short inverse kinmatics to get the initial values of the ground pelvis
+    %coordinates to position the model correctly by change the default
+    %values of these coordinates
+    ikTool.setEndTime(end_time/4);                                          
     ikTool.setModel(model_temp);
     
     % set the reference values for the scapula coordinates (last 4 tasks)
     %num_IK_tasks = ikTool.getIKTaskSet.getSize(); %No need for that, tasks are called by their names instead
     
-    % %set the weight of each coordinate in the tracking tasks
-    % %Right
+    %set the weight of each coordinate in the tracking tasks
+    %Right
     % ikTool.getIKTaskSet.get("scapula_abduction").setWeight(weight_coord(1));
     % ikTool.getIKTaskSet.get("scapula_elevation").setWeight(weight_coord(2));
     % ikTool.getIKTaskSet.get("scapula_upward_rot").setWeight(weight_coord(3));
@@ -177,8 +184,28 @@ if trc_file
     % IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("Lscapula_elevation")).setValue(Ldefault_se);
     % IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("Lscapula_upward_rot")).setValue(Ldefault_su);
     % IKCoordinateTask.safeDownCast(ikTool.getIKTaskSet.get("Lscapula_winging")).setValue(Ldefault_sw);
-    % ikTool.print('RMR_autogenerated_IK_setup.xml');
+    ikTool.print(fullfile(path_to_repo,'ExperimentalData', 'IK setup files','RMR_autogenerated_IK_setup.xml'));
     
+    ikTool.run();
+
+    %Get Coordinates to adjust initial position of the model. The motion
+    %file is imported and the mean value of the coordinates of interest is
+    %obtained 
+    lowpassFreq = 3.0; % Hz
+    timeRange = [start_time end_time];
+    [coordinates, coordNames, ~] = loadFilterCropArray(motion_file_name, lowpassFreq, timeRange); 
+    
+    ground_coord=["ground_pelvis_coord_3", "ground_pelvis_coord_4",  "ground_pelvis_coord_5"]; % Coordinates that will be adjusted
+
+    for gcord=1:length( ground_coord)
+        defval=mean(coordinates(:,find(coordNames==ground_coord(gcord))));  %Get the mean value of such coordinates
+        model_temp.updCoordinateSet().get(ground_coord(gcord)).setDefaultValue(defval); %Set the default value
+        model_temp.updCoordinateSet().get(ground_coord(gcord)).set_locked(1); %Lock the coordinates on interest
+    end
+    
+    %Run Inverse Kinematics again but for the full time range
+    ikTool.setModel(model_temp); %Set the model template after adjusting the coordinates
+    ikTool.setEndTime(end_time); %Set the end time to cover full range
     ikTool.run();
 
 else 
@@ -191,6 +218,7 @@ else
     frequency_trc_data = 1/(time(2)-time(1));
 end
 
+
 %% getting the kinematic data that we need
 % Use the loadFilterCropArray() function provided by OpenSim Tutorial to load the 
 % coordinate kinematic and generalized force data into MATLAB arrays. This 
@@ -202,8 +230,21 @@ timeRange = [start_time end_time];
 % get the coordinates from the output of the IK in rad for the rotational
 % joints
 [coordinates, coordNames, timesExp] = loadFilterCropArray(motion_file_name, lowpassFreq, timeRange); 
-coordinates(:, 1:3) = deg2rad(coordinates(:, 1:3)); 
-coordinates(:, 7:end) = deg2rad(coordinates(:, 7:end)); %******Coordinates here needs to be adjusted too *******%
+
+trans_coord=["GH_Tx", "GH_Ty", "GH_Tz", "LGH_Tx", "LGH_Ty", "LGH_Tz", "ground_pelvis_coord_3", "ground_pelvis_coord_4",  "ground_pelvis_coord_5"];
+
+% coordinates=deg2rad(coordinates);
+for coor=1:length(coordNames)
+    if ~ismember(coordNames(coor),trans_coord)
+        coordinates(:,coor)=deg2rad(coordinates(:,coor));
+    end
+end
+% coordinates(:,find(coordNames~=trans_coord))=deg2rad(coordinates(:,find(coordNames~=trans_coord)));
+
+% coordinates(:, 1:11) = deg2rad(coordinates(:, 1:11)); 
+% coordinates(:, 15:41) = deg2rad(coordinates(:, 15:41));
+% coordinates(:, 45:47) = deg2rad(coordinates(:, 45:47));
+% coordinates(:, 51:end) = deg2rad(coordinates(:, 51:end)); %******Coordinates here needs to be adjusted too *******%
 
 % get the velocities for each joint in rad/s
 time_step_data = timesExp(2)-timesExp(1);
@@ -222,9 +263,10 @@ accNames = speedNames;
 
 % visually check the values of joint states, speeds and accelerations
 if print_flag
+    Gr = ceil(sqrt(length(coordNames)));
     figure
-    for i=1:16
-    subplot(4,4,i)
+    for i=1:length(coordNames)
+    subplot(Gr,Gr,i)
     hold on
     plot(coordinates(:,i))
     plot(speeds(:,i))
@@ -262,12 +304,13 @@ state = model_temp.initSystem();
 allActs = model_temp.getActuators; 
 num_acts = getSize(allActs); 
 acts = cell(num_acts,1);
-
+actsNames=cell(num_acts,1);
 % get all actuators and override actuation for the muscles only
 for i = 1:num_acts
     acts(i) = ScalarActuator.safeDownCast(allActs.get(i-1));
+    actsNames(i)=allActs.get(i-1).getName();
     if i<=numMuscles
-        acts{i}.overrideActuation(state, true);
+        acts{i}.overrideActuation(state, true); %Enable Muscles Actuation (i.e. apply force)
     end
 end
 
@@ -306,7 +349,9 @@ x0 = [0.1* ones(1,numMuscles), zeros(1,numCoordActs)];
 % It is model specific!
 epsilon = 0;
 %The Weighting Matrix needs to change. Dimensions are not consistent
-w = [ones(1,numMuscles), epsilon*ones(1,8), 10*ones(1,9)];     % the cost function is written such that it allows the use of coord acts for the underactuated coordinates
+%w = [ones(1,numMuscles), epsilon*ones(1,8), 10*ones(1,9)];     % the cost function is written such that it allows the use of coord acts for the underactuated coordinates
+%Now the weights are consistent
+w = [ones(1,numMuscles), 10*ones(1,8), epsilon*ones(1,24), 10*ones(1,20), epsilon*ones(1,10), epsilon*ones(1,21)];
 cost =@(x) sum(w.*(x.^2));
 
 % Pre-allocate arrays to be filled in the optimization loop
@@ -316,7 +361,7 @@ fp = zeros(1, numMuscles);
 cosPenn = zeros(1, numMuscles);
 Fmax = zeros(1, numMuscles);
 A_eq_acc = zeros(numCoords,num_acts);
-LA_eq_acc = zeros(numCoords,num_acts); %Left
+% LA_eq_acc = zeros(numCoords,num_acts); %Left
 
 A_eq_force = zeros(3, num_acts);
 LA_eq_force = zeros(3, num_acts); %Left
@@ -420,6 +465,7 @@ for time_instant = 1:numTimePoints
     params.glen = glen;
     params.Lglen = Lglen; %Left 
 
+   
     [q_ddot_0, F_r0, LF_r0,~,~] = findInducedAccelerationsForceMomentsGH(zeros(1,num_acts), params); %Get Left Forces in the output
     delQ_delX = eye(num_acts);
 
@@ -440,24 +486,24 @@ for time_instant = 1:numTimePoints
     % if the task considered is a SHRUGGING task, do not track the 'plane
     % of elevation' (13th) and the 'axial rotation' (15th) coordinates as 
     % they are poorly defined.
-    if strcmpi(experiment_name(1:5), 'shrug')
-        A_eq_acc(15, :) = zeros(size(A_eq_acc(15, :)));
-        A_eq_acc(13, :) = zeros(size(A_eq_acc(13, :)));
-        Beq(15, :) = zeros(size(Beq(15, :)));
-        Beq(13, :) = zeros(size(Beq(13, :)));
-    end
+    % if strcmpi(experiment_name(1:5), 'shrug')
+    %     A_eq_acc(15, :) = zeros(size(A_eq_acc(15, :)));
+    %     A_eq_acc(13, :) = zeros(size(A_eq_acc(13, :)));
+    %     Beq(15, :) = zeros(size(Beq(15, :)));
+    %     Beq(13, :) = zeros(size(Beq(13, :)));
+    % end
 
     % Call FMINCON to solve the problem
     if flag_GH_enforced
-        [x,~,exitflag,output] = fmincon(cost, x0, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, Vec_H2GC, maxAngle, LmaxAngle, A_eq_force, LA_eq_force, F_r0, LF_r0), options);
+        [x,~,exitflag,output] = fmincon(cost, x0, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, LVec_H2GC, maxAngle, LmaxAngle, A_eq_force, LA_eq_force, F_r0, LF_r0,1), options);
         if exitflag ==0
             % call the solver again, starting from current x, in case the maximum iterations are exceeded
-            [x,~,exitflag,output] = fmincon(cost, x, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, Vec_H2GC, maxAngle, LmaxAngle, A_eq_force, LA_eq_force, F_r0, LF_r0), options);
+            [x,~,exitflag,output] = fmincon(cost, x, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, LVec_H2GC, maxAngle, LmaxAngle, A_eq_force, LA_eq_force, F_r0, LF_r0,1), options);
         end
         if exitflag<0 && time_instant>1
             % call the solver again, starting from previous optimum found,
             % in case optimization gets stuck in local minimum 
-            [x,~,exitflag,output] = fmincon(cost, xsol(time_instant-1, :), [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, maxAngle, A_eq_force, F_r0), options);
+            [x,~,exitflag,output] = fmincon(cost, xsol(time_instant-1, :), [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, LVec_H2GC, maxAngle, LmaxAngle, A_eq_force, LA_eq_force, F_r0, LF_r0,1), options);
         end
     else
         [x,~,exitflag,output] = fmincon(cost, x0, [], [], A_eq_acc, Beq, lb, ub, [], options);
@@ -566,9 +612,10 @@ if print_flag
     title("Muscle Activations")
     muscleNames = ArrayStr();
     muscles.getNames(muscleNames);
+    Dim = ceil(sqrt(numMuscles)); %Ajusted the the subplot Array
     pgc = linspace(0, 100, size(xsol,1));
     for i = 1:numMuscles
-       subplot(5,8,i)
+       subplot(Dim,Dim,i)
        hold on
        plot(pgc,xsol(:,i),'b-')
        ylim([0 1])
@@ -669,14 +716,37 @@ if print_flag
     h = gca;
     set(h, "XTickLabel", [])
     set(h, "YTickLabel", [])
-    xlabel("back                                                                       front")   % corresponding roughly to OpenSim X axis (horizontal pointing forward)
-    ylabel("down                                                                       up")      % corresponding to OpenSim Y axis (vertical pointing upwards)
+    xlabel("Posterior                                                                       Anterior")   % corresponding roughly to OpenSim X axis (horizontal pointing forward)
+    ylabel("Inferior                                                                       Superior")      % corresponding to OpenSim Y axis (vertical pointing upwards)
     colorTitleHandle = get(hcb,'Title');
     titleString = 'time [s]';
     set(colorTitleHandle ,'String',titleString);
     hold off
-    name_fig6 = append(experiment_name, '_CoPGH.png');
+    name_fig6 = append(experiment_name, '_RCoPGH.png');
     saveas(f6, name_fig6)
+
+    % plot the position of the GH force on the glenoid
+    radius = sind(LmaxAngle);
+    p=nsidedpoly(1000, 'Center', [0,0], 'Radius', radius);
+    c = linspace(0,timesExp(end),length(Lnorm_fv_rotated));
+    f7 = figure;
+    hold on
+    plot(p, 'FaceColor', 'r')
+    for time_instant=1:numTimePoints
+        scatter(-Lnorm_fv_rotated(time_instant,3), -Lnorm_fv_rotated(time_instant,1), [], c(time_instant), 'filled')
+    end
+    hcb = colorbar;
+    h = gca;
+    set(h, "XTickLabel", [])
+    set(h, "YTickLabel", [])
+    xlabel("Posterior                                                                       Anterior")   % corresponding roughly to OpenSim X axis (horizontal pointing forward)
+    ylabel("Inferior                                                                       Superior")      % corresponding to OpenSim Y axis (vertical pointing upwards)
+    colorTitleHandle = get(hcb,'Title');
+    titleString = 'time [s]';
+    set(colorTitleHandle ,'String',titleString);
+    hold off
+    name_fig7 = append(experiment_name, '_LCoPGH.png');
+    saveas(f7, name_fig7)
 end
 
 %% SAVING THE RESULTS TO FILE
@@ -699,6 +769,8 @@ muscle_order = muscle_order(2:end);
 % rescale the frequency of the solution knowing the freq of the data
 frequency_solution = frequency_trc_data/time_interval;
 
-save(name_file, 'xsol', 'muscle_order', 'frequency_solution', 'optimizationStatus', 'unfeasibility_flags', 'tOptim');
+save(name_file, 'xsol', 'muscle_order', 'frequency_solution', 'optimizationStatus', 'unfeasibility_flags', 'tOptim', ...
+    'norm_fv_rotated', 'Lnorm_fv_rotated', 'A_eq_force', 'LA_eq_force', 'A_eq_acc','speeds','accelerations','actsNames', ...
+    'simulatedAccelerations');
 
 file_results = fullfile(saving_path, name_file, '.mat');

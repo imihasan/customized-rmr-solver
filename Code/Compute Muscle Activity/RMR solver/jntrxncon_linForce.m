@@ -28,6 +28,8 @@ function [c, ceq] = jntrxncon_linForce(x, directionVector, LdirectionVector, max
 % formulation of the force
 %
 % author: Italo Belli (i.belli@tudelft.nl) 2022
+%Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
+%KTH Royal Institute of Technology, Stockholm, Sweden.
 
 import org.opensim.modeling.*;
 
@@ -51,5 +53,5 @@ LcosTheta = max(min(dot(LdirectionVector,Lforce_vec)/(norm(LdirectionVector)*nor
 Lrel_angle = real(acosd(LcosTheta));
 
 % value of the constraint violation
-c = [GH_weight*((rel_angle/maxAngle)^2 - 1) GH_weight*((Lrel_angle/LmaxAngle)^2 - 1)];             % direction must lie in a cone
-ceq = [0 0]; 
+c = [GH_weight*((rel_angle/maxAngle)^2 - 1); GH_weight*((Lrel_angle/LmaxAngle)^2 - 1)];             % direction must lie in a cone
+ceq = [0; 0]; 

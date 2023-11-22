@@ -5,6 +5,8 @@
 % constraint or not.
 %
 % Author: Italo Belli (i.belli@tudelft.nl) 2023
+%Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
+%KTH Royal Institute of Technology, Stockholm, Sweden.
 
 close all; clear; clc; beep off;
 
@@ -21,7 +23,7 @@ addpath(pathstr)
 cd ..\..\..\
 path_to_repo = pwd;
 addpath(path_to_repo)
-addpath(fullfile(path_to_repo, 'Code\Data Processing\'))
+addpath(fullfile(path_to_repo, 'Code\Data Processing\')) 
 
 % where you have the experimental files (.trc)
 trc_path = fullfile(path_to_repo, 'ExperimentalData\Markers');
@@ -31,6 +33,9 @@ saving_path = fullfile(path_to_repo, '\Personal_Results');
 % Select model
 modelFile_2kg = append(path_to_repo, '\OpenSim Models\for RMR solver\KTHUpperBodyModel_scaled.osim');
 model_2kg = Model(modelFile_2kg);
+
+modelFile_2kg_NoCons = append(path_to_repo, '\OpenSim Models\for RMR solver\KTHUpperBodyModel_scaled_NoConst.osim');
+model_2kg_NoCons = Model(modelFile_2kg_NoCons);
 
 % Select the experimental data to be considered
 dataset_considered = 'Posture_Vista';
@@ -79,9 +84,9 @@ for trc_file_index=1:num_files
     
     % consider the correct model in the analysis, based on the .trc files
     if has_2kg_weight
-        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, model_2kg, experiment, 0, weight_coord, time_interval, dynamic_bounds, enforce_GH_constraint, saving_path);
+        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, model_2kg, model_2kg_NoCons,experiment, 0, weight_coord, time_interval, dynamic_bounds, enforce_GH_constraint, saving_path);
     else
-        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, model_0kg, experiment, 0, weight_coord, time_interval, dynamic_bounds, enforce_GH_constraint, saving_path);
+        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, model_0kg, model_2kg_NoCons,experiment, 0, weight_coord, time_interval, dynamic_bounds, enforce_GH_constraint, saving_path);
     end
     optimizationStatus(trc_file_index).experiment = aux_optimization_status;
     result_file_RMR{trc_file_index} = aux_result_file;
