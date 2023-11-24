@@ -4,3 +4,4 @@
 # ignore all Matlab autosaved files
 *.asv
 Personal_Results/*
+OpenSim Models/*
