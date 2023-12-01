@@ -10,4 +10,4 @@
 # ignore everything inside the following folders
 Personal_Results/*
 OpenSim Models/*
-*/Geometry/*
+ExperimentalData/*
