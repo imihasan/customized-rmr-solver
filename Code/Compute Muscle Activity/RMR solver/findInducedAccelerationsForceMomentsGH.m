@@ -38,8 +38,6 @@ function [simulatedAccelerations, force, Lforce, moment, Lmoment] = findInducedA
 %Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
 %KTH Royal Institute of Technology, Stockholm, Sweden.
 
-
-import org.opensim.modeling.*;
 model = params.model; 
 state = params.state;
 acts = params.acts;
@@ -51,6 +49,10 @@ glen = params.glen;
 Lglen = params.Lglen; %Call the Left Glenohumeral 
 useMuscles = params.useMuscles;
 useControls = params.useControls;
+
+if useControls
+    import org.opensim.modeling.*;
+end
 
 
 % Inizialize the muscles to produce the required forces
@@ -75,7 +77,7 @@ else             % if we want to set the controls
     modelControls = params.modelControls;
     for k = numMuscles+1:length(acts)
         %if string(acts{k}.getConcreteClassName()) == "CoordinateActuator"
-        acts{k}.setControls(Vector(1, x(k)), modelControls);                    %This part has been modified to ovverride actuation only of coordinate actuators
+        acts{k}.setControls(Vector(1, x(k)), modelControls);               %This part has been modified to ovverride actuation only of coordinate actuators
         %end
     end
     model.realizeVelocity(state);

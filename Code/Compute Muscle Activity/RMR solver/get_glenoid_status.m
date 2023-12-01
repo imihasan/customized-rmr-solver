@@ -14,7 +14,7 @@ function [angle, Langle, Vec_H2GC, LVec_H2GC] = get_glenoid_status(model, state)
 %Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
 %KTH Royal Institute of Technology, Stockholm, Sweden.
 
-import org.opensim.modeling.*;
+%import org.opensim.modeling.*;
 
 % get the markerset of the model and the number of markers
 mkrs = model.getMarkerSet;
@@ -37,7 +37,7 @@ LG_Cent = mkrs.get("LGlenoid_Center");
 LHH_Cent = mkrs.get("LHumHead_Center"); 
 LG_Edge = mkrs.get("LGlenoid_Edge");
 
-% get the location in ground of the three markers
+%get the location in ground of the three markers
 %Right
 G_Cent_Loc = G_Cent.getLocationInGround(state).getAsMat()';
 HH_Cent_Loc = HH_Cent.getLocationInGround(state).getAsMat()';

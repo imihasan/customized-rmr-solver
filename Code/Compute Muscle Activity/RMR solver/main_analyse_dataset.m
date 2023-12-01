@@ -16,6 +16,8 @@ import org.opensim.modeling.*;
 % set the path current folder to be the one where this script is contained
 mfile_name          = mfilename('fullpath');
 [pathstr,~,~]  = fileparts(mfile_name);
+subjectName='Lhui';
+
 cd(pathstr);
 
 % getting path to other folders in this repo
@@ -26,13 +28,20 @@ addpath(path_to_repo)
 addpath(fullfile(path_to_repo, 'Code\Data Processing\')) 
 
 % where you have the experimental files (.trc)
-trc_path = fullfile(path_to_repo, 'ExperimentalData\Markers');
-
+trc_path = fullfile(path_to_repo, 'ExperimentalData');
+                                                  
 % where to save the results
-saving_path = fullfile(path_to_repo, '\Personal_Results');
+%Added this line to annotate different simulation trials with the corresponding changes
+editFlag='Spine, Neck and Locked Excluded Use Controls Stnclav not penalized SC coord'; 
+mkdir(fullfile(path_to_repo,'\Personal_Results\',subjectName,'\',editFlag,'\'))
+saving_path = fullfile(path_to_repo,'\Personal_Results\',subjectName,'\',editFlag,'\');
+
 % Select model
 modelFile_2kg = append(path_to_repo, '\OpenSim Models\for RMR solver\KTHUpperBodyModel_scaled.osim');
 model_2kg = Model(modelFile_2kg);
+%Add Mass to hands
+model_2kg.updBodySet().get("hand").setMass(model_2kg.updBodySet().get("hand").getMass()+2);
+model_2kg.updBodySet().get("Lhand").setMass(model_2kg.updBodySet().get("Lhand").getMass()+2);
 
 modelFile_2kg_NoCons = append(path_to_repo, '\OpenSim Models\for RMR solver\KTHUpperBodyModel_scaled_NoConst.osim');
 model_2kg_NoCons = Model(modelFile_2kg_NoCons);
@@ -63,6 +72,11 @@ time_interval = 1;
 % Flags (Select whether to enforce constraints)
 dynamic_bounds = true;              % enforcing continuity of the activations from one timestep to the next, to respect first-order dynamics
 enforce_GH_constraint = true;       % enforcing directional constraint on the glenohumeral joint force
+flag_constraint=0;                  % Deactivating coordinate coulping and point constraints in Dynamics
+flag_excludeSpine=0;
+flag_excludeNeck=0;
+flag_excludeBoth=1;
+execlude_locked=1;
 
 %% Run Rapid Muscle Redundancy (RMR) solver
 % preallocating arrays to hold information about the solutions
@@ -84,9 +98,15 @@ for trc_file_index=1:num_files
     
     % consider the correct model in the analysis, based on the .trc files
     if has_2kg_weight
-        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, model_2kg, model_2kg_NoCons,experiment, 0, weight_coord, time_interval, dynamic_bounds, enforce_GH_constraint, saving_path);
+        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, ...
+            model_2kg, experiment, 0, weight_coord, time_interval, dynamic_bounds, ...
+            enforce_GH_constraint, flag_constraint,flag_excludeSpine, flag_excludeNeck, ...
+            flag_excludeBoth, execlude_locked,saving_path);
     else
-        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, model_0kg, model_2kg_NoCons,experiment, 0, weight_coord, time_interval, dynamic_bounds, enforce_GH_constraint, saving_path);
+        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, ...
+            model_0kg, experiment, 0, weight_coord, time_interval, dynamic_bounds, ...
+            enforce_GH_constraint, flag_constraint, flag_excludeSpine, flag_excludeNeck, ...
+            flag_excludeBoth, execlude_locked,saving_path);
     end
     optimizationStatus(trc_file_index).experiment = aux_optimization_status;
     result_file_RMR{trc_file_index} = aux_result_file;
