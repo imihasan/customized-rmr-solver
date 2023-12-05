@@ -66,7 +66,7 @@ import org.opensim.modeling.*;
 %% General settings
 % if these are set to true, results are printed but the code will be slower
 print_flag = true;         
-withviz = false;
+withviz = true;
 
 %% Set the correct paths
 % set the path current folder to be the one where this script is contained
@@ -229,8 +229,6 @@ end
 % arguments (more details in loadFilterCropArray.m).
 % model_temp=Model(fullfile(saving_path,"model.osim"));
 
-
-
 lowpassFreq = 3.0; % Hz
 timeRange = [start_time end_time];
 
@@ -238,6 +236,10 @@ timeRange = [start_time end_time];
 % joints
 [coordinates, coordNames, timesExp] = loadFilterCropArray(motion_file_name, lowpassFreq, timeRange); 
 
+%Assign All coordinates to different variables for visualization and
+%updating the state
+All_coordinates=coordinates;
+All_coordNames=coordNames;
 
 %Drop Locked Coordinates
 if execlude_locked==1
@@ -296,11 +298,24 @@ for coor=1:size(coordNames)
     end
 end
 
+%All coordinates
+for coor=1:size(All_coordNames)
+    if ~ismember(All_coordNames(coor),trans_coord)
+        All_coordinates(:,coor)=deg2rad(All_coordinates(:,coor));
+    end
+end
+
 % get the velocities for each joint in rad/s
 time_step_data = timesExp(2)-timesExp(1);
 speeds = zeros(size(coordinates));
 for i=1:size(coordNames,1)
     speeds(:,i) = gradient(coordinates(:,i), time_step_data);
+end
+
+%All Velocities
+All_speeds = zeros(size(All_coordinates));
+for i=1:size(All_coordNames,1)
+    All_speeds(:,i) = gradient(All_coordinates(:,i), time_step_data);
 end
 speedNames = coordNames;
 
@@ -309,10 +324,13 @@ accelerations = zeros(size(speeds));
 for i=1:size(coordNames,1)
     accelerations(:,i) = gradient(speeds(:,i), time_step_data);
 end
+
+%All Accelerations
+All_accelerations = zeros(size(All_speeds));
+for i=1:size(All_coordNames,1)
+    All_accelerations(:,i) = gradient(All_speeds(:,i), time_step_data);
+end
 accNames = speedNames;
-
-
-
 
 % visually check the values of joint states, speeds and accelerations
 if print_flag
@@ -358,6 +376,7 @@ allActs = model_temp.getActuators;
 num_acts = getSize(allActs); 
 acts = cell(num_acts,1);
 actsNames=cell(num_acts,1);
+
 % get all actuators and override actuation for the muscles only
 for i = 1:num_acts
     acts(i) = ScalarActuator.safeDownCast(allActs.get(i-1));
@@ -432,6 +451,11 @@ N = size(coordinates, 1);
 coordinates = coordinates(1:time_interval:N, :);
 speeds = speeds(1:time_interval:N, :);
 accelerations = accelerations(1:time_interval:N, :);
+
+All_coordinates = All_coordinates(1:time_interval:N, :);
+All_speeds = All_speeds(1:time_interval:N, :);
+All_accelerations = All_accelerations(1:time_interval:N, :);
+
 numTimePoints = size(coordinates, 1);
 unfeasibility_flags = zeros(size(numTimePoints));
 
@@ -533,8 +557,7 @@ tf_Optim=zeros(1,length(timesExp));
 %computational time specially params.Lglen = Lglen I moved it outside to
 %save compuational time and kept only parmeters that needs to be updted
 %inside the loop
-params.model = model_temp; 
-params.state = state;    
+params.model = model_temp;  
 params.coords = coords; 
 params.coordNames = coordNames; 
 params.acts = acts; 
@@ -564,10 +587,10 @@ for time_instant = 1:numTimePoints
     % Loop through model coordinates to set coordinate values and speeds. We set
     % all coordinates to make sure we have the correct kinematic state when 
     % compute muscle multipliers and moment arms.
-    for j = 1:length(coordNames)
-        coord = coords.get(coordNames{j});
-        coord.setValue(state, coordinates(time_instant,j), false); % instead of fals replace so that does the assembly on the last call (j==length)
-        coord.setSpeedValue(state, speeds(time_instant,j));
+    for j = 1:length(All_coordNames)
+        coord = coords.get(All_coordNames{j});
+        coord.setValue(state,All_coordinates(time_instant,j), false); % instead of fals replace so that does the assembly on the last call (j==length)
+        coord.setSpeedValue(state, All_speeds(time_instant,j));
     end
 
     % realize the system to the velocity stage
@@ -579,6 +602,7 @@ for time_instant = 1:numTimePoints
     
     modelControls = model_temp.getControls(state);
 
+    %Realize Accelerations and get ligaments forces
     model_temp.realizeAcceleration(state); 
     for g=1:length(ligaments)
         lig=Ligament.safeDownCast(model_temp.updForceSet().get(ligaments(g)));
@@ -604,8 +628,10 @@ for time_instant = 1:numTimePoints
     AMuscForce = (fl.*fv.*Fmax.*cosPenn)'; 
     PMuscForce = (Fmax.*fp.*cosPenn)'; 
     
+    
 
     %Define the remaining params structs elements
+    params.state = state; 
     params.AMuscForce = AMuscForce;
     params.PMuscForce = PMuscForce;
     params.modelControls = modelControls;
@@ -785,7 +811,7 @@ if print_flag
        hold off
     end
     legend("muscle activation")
-    f1.WindowState = 'maximized';
+    %f1.WindowState = 'maximized';
     name_fig1 = append(experiment_name, '_MuscleActivations.png');
     name_fig1svg = append(experiment_name, '_MuscleActivations.svg');
     saveas(f1, name_fig1)
@@ -803,7 +829,7 @@ if print_flag
         hold off
     end
     legend("reserve act value")
-    f2.WindowState = 'maximized';
+    %f2.WindowState = 'maximized';
     name_fig2 = append(experiment_name, '_ReserveActuators.png');
     name_fig2svg = append(experiment_name, '_ReserveActuators.svg');
     saveas(f2, name_fig2)
@@ -825,7 +851,7 @@ if print_flag
         hold off
     end
     legend("measured", "simulated")
-    f3.WindowState = 'maximized';
+    %f3.WindowState = 'maximized';
     name_fig3 = append(experiment_name, '_AccelerationsMatching.png');
     name_fig3svg = append(experiment_name, '_AccelerationsMatching.svg');
     saveas(f3, name_fig3)
@@ -850,7 +876,7 @@ if print_flag
         hold off
     end
     legend("acc violation")
-    f4.WindowState = 'maximized';
+    %f4.WindowState = 'maximized';
     name_fig4 = append(experiment_name, '_AccViolation.png');
     name_fig4svg = append(experiment_name, '_AccViolation.svg');
     saveas(f4, name_fig4)
@@ -867,7 +893,7 @@ if print_flag
     grid on
     title("Cumulative constraint violation per time-step")
     hold off
-    f5.WindowState = 'maximized';
+    %f5.WindowState = 'maximized';
     name_fig5 = append(experiment_name, '_CumulativeAccViolation.png');
     name_fig5svg = append(experiment_name, '_CumulativeAccViolation.svg');
     saveas(f5, name_fig5)
@@ -982,6 +1008,7 @@ save(name_file, 'xsol', 'muscle_order', 'frequency_solution', 'optimizationStatu
     'norm_fv_rotated', 'Lnorm_fv_rotated', 'A_eq_force', 'LA_eq_force', 'A_eq_acc', ...
     'coordinates','coordNames','speeds','accelerations','actsNames', ...
     'simulatedAccelerations','maxAngle', 'LmaxAngle', 'timesExp','numTimePoints', ...
-    'lig_force','ligaments','lig_ratio','tb_Optim','tA_Optim','wc','force_vecc','Lforce_vecc');
+    'lig_force','ligaments','lig_ratio','tb_Optim','tA_Optim','wc','force_vecc', ...
+    'Lforce_vecc', 'All_coordNames','All_coordinates','All_accelerations');
 
 file_results = fullfile(saving_path, name_file, '.mat');

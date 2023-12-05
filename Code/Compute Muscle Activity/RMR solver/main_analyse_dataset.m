@@ -32,7 +32,7 @@ trc_path = fullfile(path_to_repo, 'ExperimentalData');
                                                   
 % where to save the results
 %Added this line to annotate different simulation trials with the corresponding changes
-editFlag='Spine, Neck and Locked Excluded Use Controls Stnclav not penalized SC coord'; 
+editFlag='Spine, Neck and Locked Excluded Use Controls Stnclav not penalized SC coord, All Coords Upated in state'; 
 mkdir(fullfile(path_to_repo,'\Personal_Results\',subjectName,'\',editFlag,'\'))
 saving_path = fullfile(path_to_repo,'\Personal_Results\',subjectName,'\',editFlag,'\');
 
