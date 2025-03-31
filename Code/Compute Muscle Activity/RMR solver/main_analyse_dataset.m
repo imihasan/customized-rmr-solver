@@ -5,8 +5,17 @@
 % constraint or not.
 %
 % Author: Italo Belli (i.belli@tudelft.nl) 2023
-%Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
-%KTH Royal Institute of Technology, Stockholm, Sweden.
+%
+% Customized by: Ibrahim Mohammed I. Hasan (imihasan@kth.se) 2025
+%
+% Customization included integrating different formulations to model the
+% glenohumeral stability problem. The original formulation in the rmr
+% solver enforced an inequality constrain to maintain the glenohumeral
+% contact froce vector within the glenoid cavity border approximated as a
+% circle. The customized version included differnt approximation of the
+% glenoid cavity border as a point, an ellipse, and a polynomial. Also a
+% different strategy was introduced to model glebohumeral stability as a
+% conditional and a continuous penlaty in the objective function. 
 
 close all; clear; clc; beep off;
 
@@ -16,38 +25,60 @@ import org.opensim.modeling.*;
 % set the path current folder to be the one where this script is contained
 mfile_name          = mfilename('fullpath');
 [pathstr,~,~]  = fileparts(mfile_name);
-subjectName='Lhui';
-
 cd(pathstr);
 
 % getting path to other folders in this repo
 addpath(pathstr)
-cd ..\..\..\
+cd ..\
 path_to_repo = pwd;
 addpath(path_to_repo)
-addpath(fullfile(path_to_repo, 'Code\Data Processing\')) 
+addpath(fullfile(path_to_repo, 'Code\Data Processing\'))
+
+
+% Flags (Select whether to enforce constraints)
+% enforcing continuity of the activations from one timestep to the next, 
+% to respect first-order dynamics
+dynamic_bounds = true;
+% enforcing directional constraint on the glenohumeral joint force
+enforce_GH_constraint = false;
+% string indicating the name of the stability border to be enforced. 
+% It can be: circle, ellipse, polynomial or point.
+tag_con="ellipse";
+% string indicating which penalty to use in the cost function: 
+% "conditional", "planar", "curve", or "no_penalty"
+tag_cost= "curve";
+% execlude locked coordinates from matching
+execlude_locked=0;
+% execlude clavicle coordinates from matching
+execl_clav=0;
+% execlude scaula winging coordinate from matching
+execl_wing=0;    
 
 % where you have the experimental files (.trc)
-trc_path = fullfile(path_to_repo, 'ExperimentalData');
-                                                  
+trc_path = fullfile(path_to_repo, 'ExperimentalData\S8R\trc');
+
 % where to save the results
-%Added this line to annotate different simulation trials with the corresponding changes
-editFlag='Spine, Neck and Locked Excluded Use Controls Stnclav not penalized SC coord, All Coords Upated in state'; 
-mkdir(fullfile(path_to_repo,'\Personal_Results\',subjectName,'\',editFlag,'\'))
-saving_path = fullfile(path_to_repo,'\Personal_Results\',subjectName,'\',editFlag,'\');
+Edit_tag='Test'; %name of the folder where results will be saved
+mkdir(fullfile(path_to_repo, ['Personal_Results\S8R\' Edit_tag]));
+saving_path = fullfile(path_to_repo, ['Personal_Results\S8R\' Edit_tag]);
+%Write a text file to describe the changes or the conditions you have made
+%in this trial
+Edit_description="Description_Here";
+writelines(Edit_description,fullfile(saving_path,"Description.txt"));
 
 % Select model
-modelFile_2kg = append(path_to_repo, '\OpenSim Models\for RMR solver\KTHUpperBodyModel_scaled.osim');
+modelFile_2kg = append(path_to_repo, '\OpenSim Models\OrthoModel_2kgWeight.osim');
 model_2kg = Model(modelFile_2kg);
-%Add Mass to hands
-model_2kg.updBodySet().get("hand").setMass(model_2kg.updBodySet().get("hand").getMass()+2);
-model_2kg.updBodySet().get("Lhand").setMass(model_2kg.updBodySet().get("Lhand").getMass()+2);
 
-modelFile_2kg_NoCons = append(path_to_repo, '\OpenSim Models\for RMR solver\KTHUpperBodyModel_scaled_NoConst.osim');
-model_2kg_NoCons = Model(modelFile_2kg_NoCons);
+%Read a baseline model and re-assign the 2.4kg to the hand in the current
+%model
+model_base=Model(path_to_repo+"\OpenSim Models\BaseModel.osim");
+model_2kg.updBodySet().get("hand").setMass(model_base.updBodySet().get("hand").getMass()+2.4);
+model_2kg.updBodySet().get("hand").setMassCenter(Vec3(0, -0.03, 0));
+model_2kg.finalizeConnections();
 
 % Select the experimental data to be considered
-dataset_considered = 'Posture_Vista';
+dataset_considered = 'Orthoload';
 
 [files,path] = uigetfile('*.trc', 'Select the .trc files to analyse', trc_path, 'MultiSelect','on');
 
@@ -68,15 +99,7 @@ weight_coord = [weight_abd, weight_elev, weight_up_rot, weigth_wing];
 
 % Downsampling
 time_interval = 1;
-
-% Flags (Select whether to enforce constraints)
-dynamic_bounds = true;              % enforcing continuity of the activations from one timestep to the next, to respect first-order dynamics
-enforce_GH_constraint = true;       % enforcing directional constraint on the glenohumeral joint force
-flag_constraint=0;                  % Deactivating coordinate coulping and point constraints in Dynamics
-flag_excludeSpine=0;
-flag_excludeNeck=0;
-flag_excludeBoth=1;
-execlude_locked=1;
+t_end=4; %set the end time
 
 %% Run Rapid Muscle Redundancy (RMR) solver
 % preallocating arrays to hold information about the solutions
@@ -97,17 +120,12 @@ for trc_file_index=1:num_files
     end
     
     % consider the correct model in the analysis, based on the .trc files
-    if has_2kg_weight
-        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, ...
-            model_2kg, experiment, 0, weight_coord, time_interval, dynamic_bounds, ...
-            enforce_GH_constraint, flag_constraint,flag_excludeSpine, flag_excludeNeck, ...
-            flag_excludeBoth, execlude_locked,saving_path);
-    else
-        [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, ...
-            model_0kg, experiment, 0, weight_coord, time_interval, dynamic_bounds, ...
-            enforce_GH_constraint, flag_constraint, flag_excludeSpine, flag_excludeNeck, ...
-            flag_excludeBoth, execlude_locked,saving_path);
-    end
+    
+    [aux_optimization_status, aux_unfeasibility_flags, tOptim(trc_file_index), aux_result_file] = RMR_analysis(dataset_considered, model_2kg, ...
+        experiment, 0, weight_coord, time_interval, dynamic_bounds, ...
+        enforce_GH_constraint, execlude_locked,execl_clav, execl_wing, ...
+        t_end, saving_path, tag_con, tag_cost);
+
     optimizationStatus(trc_file_index).experiment = aux_optimization_status;
     result_file_RMR{trc_file_index} = aux_result_file;
     unfeasibility_flag(trc_file_index).experiment = aux_unfeasibility_flags;
