@@ -35,7 +35,7 @@ Please cite this work as:
 This work was funded by the Promobilia Foundation, and the Swedish Research Council. 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1279341c-86dd-41ad-ba88-712d21e1af96" width="300">
+  <img src="https://github.com/user-attachments/assets/1279341c-86dd-41ad-ba88-712d21e1af96" width="300" style="margin-right: 20px;">
   <img src="https://github.com/user-attachments/assets/6e0aeae9-4fcc-4795-b695-533111dd219e" width="300">
 </p>
 
