@@ -36,10 +36,7 @@ This work was funded by the Promobilia Foundation, and the Swedish Research Coun
 
 <p>
     <img src="https://github.com/user-attachments/assets/1279341c-86dd-41ad-ba88-712d21e1af96" >
-  <p>
+    <p>
     <img src="https://github.com/user-attachments/assets/6e0aeae9-4fcc-4795-b695-533111dd219e" >
 </p>
 
-![Image](https://github.com/user-attachments/assets/1279341c-86dd-41ad-ba88-712d21e1af96)
-
-![Image](https://github.com/user-attachments/assets/6e0aeae9-4fcc-4795-b695-533111dd219e)
