@@ -27,7 +27,13 @@ In this customized version, we integrated different formulations to model glenoh
 Dataset of upper body **kinematics and glenohumeral contact force measurements** from an **instrumented shoulder prosthesis** were used to validate the estimated **magnitude** and **direction** of the glenohumeral contact force.  
 Dataset available at **DOI:** [10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38](https://doi.org/10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38)
 
+## Publications
+Please cite this work as:
+
+
 ## Funding
 This work was funded by the Promobilia Foundation, and the Swedish Research Council. 
 
-![Image](https://github.com/user-attachments/assets/efa371cf-a043-45bf-aa30-0d9fa36741b9)
+![Image](https://github.com/user-attachments/assets/1279341c-86dd-41ad-ba88-712d21e1af96)
+
+![Image](https://github.com/user-attachments/assets/6e0aeae9-4fcc-4795-b695-533111dd219e)
