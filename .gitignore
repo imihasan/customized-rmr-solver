@@ -6,8 +6,3 @@
 
 # ignore the geometry files (might need to change if we want to push a model to origin)
 *.vtp
-
-# ignore everything inside the following folders
-Personal_Results/*
-OpenSim Models/*
-ExperimentalData/*
