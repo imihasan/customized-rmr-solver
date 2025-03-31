@@ -40,7 +40,7 @@ This work was funded by the Promobilia Foundation, and the Swedish Research Coun
 </p>
 
 ## Author
-Customizations included in this repository were implemented by Ibrahim Mohammed I. Hasan during his PhD at KTH MoveAbility, KTH Royal Institute of Technology, Stockholm, Sweden. 
+Customizations included in this repository were implemented by Ibrahim Mohammed I. Hasan during his Ph.D. at KTH MoveAbility, Department of Engineering Mechanics, KTH Royal Institute of Technology, Stockholm, Sweden. 
 
 
 <p align="center">
