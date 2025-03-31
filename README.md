@@ -40,7 +40,7 @@ This work was funded by the Promobilia Foundation, and the Swedish Research Coun
 </p>
 
 ## Author
-Customizations included in this repository were implemented by Ibrahim Mohammed I. Hasan during his Ph.D. at KTH MoveAbility, Department of Engineering Mechanics, KTH Royal Institute of Technology, Stockholm, Sweden. 
+Customization of the original RMR solver and integration of the different stability formulations, included in this repository, were implemented by Ibrahim Mohammed I. Hasan during his Ph.D. at KTH MoveAbility, Department of Engineering Mechanics, KTH Royal Institute of Technology, Stockholm, Sweden. 
 
 
 <p align="center">
