@@ -39,7 +39,8 @@ This work was funded by the Promobilia Foundation, and the Swedish Research Coun
   <img src="https://github.com/user-attachments/assets/6e0aeae9-4fcc-4795-b695-533111dd219e" width="300">
 </p>
 
-## This customizations included in this repository were implemented by Ibrahim Mohammed I. Hasan during his PhD at KTH MoveAbility, KTH Royal Institute of Technology, Stockholm, Sweden. 
+## Author
+Customizations included in this repository were implemented by Ibrahim Mohammed I. Hasan during his PhD at KTH MoveAbility, KTH Royal Institute of Technology, Stockholm, Sweden. 
 
 
 <p align="center">
