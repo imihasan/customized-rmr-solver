@@ -34,6 +34,11 @@ Please cite this work as:
 ## Funding
 This work was funded by the Promobilia Foundation, and the Swedish Research Council. 
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1279341c-86dd-41ad-ba88-712d21e1af96" width="100">
+  <img src="https://github.com/user-attachments/assets/6e0aeae9-4fcc-4795-b695-533111dd219e" width="100">
+</p>
+
 <p>
     <img src="https://github.com/user-attachments/assets/1279341c-86dd-41ad-ba88-712d21e1af96" >
     <p>
