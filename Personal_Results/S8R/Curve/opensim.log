@@ -1,0 +1,593 @@
+[2025-02-22 08:31:37.752] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 08:31:37.819] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Curve\transformed_MSbfkg1_Model.osim
+[2025-02-22 08:31:37.819] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-22 08:31:37.820] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-22 08:31:37.821] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-22 08:31:37.821] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-22 08:31:37.994] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 08:31:37.995] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 08:31:37.996] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 08:31:37.996] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 08:31:47.600] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSbfkg1.trc (27 markers, 398 frames)
+[2025-02-22 08:35:28.578] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 08:35:28.586] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Curve\transformed_MSffkg1_Model.osim
+[2025-02-22 08:35:28.587] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-22 08:35:28.587] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-22 08:35:28.588] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-22 08:35:28.588] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-22 08:35:28.637] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 08:35:28.638] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 08:35:28.638] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 08:35:28.638] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 08:35:34.721] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSffkg1.trc (27 markers, 566 frames)
+[2025-02-22 09:07:34.732] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 09:07:34.740] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Curve\transformed_MSabdkg1_Model.osim
+[2025-02-22 09:07:34.740] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-22 09:07:34.740] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-22 09:07:34.741] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-22 09:07:34.741] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-22 09:07:34.759] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 09:07:34.760] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 09:07:34.760] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 09:07:34.760] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 09:07:44.627] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSabdkg1.trc (27 markers, 482 frames)
+[2025-02-22 09:12:46.622] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 09:12:46.631] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Strict\transformed_MSabdkg1_Model.osim
+[2025-02-22 09:12:46.631] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-22 09:12:46.632] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-22 09:12:46.632] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-22 09:12:46.632] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-22 09:12:46.647] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 09:12:46.647] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 09:12:46.647] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 09:12:46.647] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 09:12:51.312] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSabdkg1.trc (27 markers, 482 frames)
+[2025-02-22 09:56:37.710] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 09:56:37.718] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\OpenSim Models\for RMR solver\transformed_MSbfkg1 - CostFun_Model.osim
+[2025-02-22 09:58:53.048] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 09:58:53.056] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\OpenSim Models\for RMR solver\transformed_MSffkg1 - CostFun_Model.osim
+[2025-02-22 10:28:39.702] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 10:28:39.710] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\OpenSim Models\for RMR solver\transformed_MSabdkg1 - CostFun_Model.osim
+[2025-02-22 12:12:49.958] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 12:12:49.967] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Circle\transformed_MSbfkg1_Model.osim
+[2025-02-22 12:12:49.967] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-22 12:12:49.967] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-22 12:12:49.968] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-22 12:12:49.968] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-22 12:12:50.011] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 12:12:50.011] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 12:12:50.011] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 12:12:50.011] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 12:12:59.302] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSbfkg1.trc (27 markers, 398 frames)
+[2025-02-22 12:18:30.894] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSffkg1.trc (27 markers, 566 frames)
+[2025-02-22 12:18:37.831] [info] Updating Model file from 40000 to latest format...
+[2025-02-22 12:18:37.840] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Circle\transformed_MSffkg1_Model.osim
+[2025-02-22 12:18:37.840] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-22 12:18:37.841] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-22 12:18:37.841] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-22 12:18:37.841] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-22 12:18:37.862] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 12:18:37.862] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 12:18:37.862] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-22 12:18:37.862] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 11:16:18.521] [info] Updating Model file from 40000 to latest format...
+[2025-02-23 11:16:18.589] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Curve\transformed_MSabdkg1_Model.osim
+[2025-02-23 11:16:18.590] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-23 11:16:18.591] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-23 11:16:18.591] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-23 11:16:18.592] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-23 11:16:18.779] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 11:16:18.779] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 11:16:18.780] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 11:16:18.780] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 11:16:28.647] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSabdkg1.trc (27 markers, 482 frames)
+[2025-02-23 11:48:05.677] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\OpenSim Models\for RMR solver\OrthoModel_2kgWeight.osim
+[2025-02-23 20:55:47.878] [info] Updating Model file from 40000 to latest format...
+[2025-02-23 20:55:47.888] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Curve\transformed_MSffkg1_Model.osim
+[2025-02-23 20:55:47.888] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-23 20:55:47.888] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-23 20:55:47.888] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-23 20:55:47.889] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-23 20:55:47.941] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 20:55:47.942] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 20:55:47.942] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 20:55:47.942] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-23 20:55:53.118] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSffkg1.trc (27 markers, 566 frames)
+[2025-02-24 08:57:30.475] [info] Updating Model file from 40000 to latest format...
+[2025-02-24 08:57:30.554] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Curve\transformed_MSabdkg1_Model.osim
+[2025-02-24 08:57:30.555] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-24 08:57:30.556] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-24 08:57:30.556] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-24 08:57:30.556] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-24 08:57:30.736] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-24 08:57:30.736] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-24 08:57:30.737] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-24 08:57:30.737] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-24 08:57:35.737] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSabdkg1.trc (27 markers, 482 frames)
+[2025-02-24 09:04:10.563] [info] Updating Model file from 40000 to latest format...
+[2025-02-24 09:04:10.571] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Curve\transformed_MSbfkg1_Model.osim
+[2025-02-24 09:04:10.572] [warning] Couldn't find file 'thorax.vtp'.
+[2025-02-24 09:04:10.573] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-02-24 09:04:10.573] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-02-24 09:04:10.573] [warning] Couldn't find file 'scapula.vtp'.
+[2025-02-24 09:04:10.625] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-24 09:04:10.625] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-24 09:04:10.626] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-24 09:04:10.626] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-02-24 09:04:15.167] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSbfkg1.trc (27 markers, 398 frames)
+[2025-02-24 14:42:14.795] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\OpenSim Models\for RMR solver\OrthoModel_2kgWeight.osim
+[2025-02-24 14:45:17.321] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\OpenSim Models\for RMR solver\OrthoModel_2kgWeight.osim
+[2025-02-24 15:08:55.251] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSbfkg1 - CostFun.trc (27 markers, 398 frames)
+[2025-02-24 15:08:56.214] [cout] [info] 
+               MODEL: ThoracoscapularShoulderModel
+         coordinates: 17
+              forces: 50
+           actuators: 50
+             muscles: 33
+            analyses: 2
+              probes: 0
+              bodies: 7
+              joints: 7
+         constraints: 1
+             markers: 26
+         controllers: 0
+  contact geometries: 0
+misc modelcomponents: 0
+[2025-02-24 15:08:56.215] [info] Running tool .
+[2025-02-24 15:08:56.273] [info] Frame 0 (t = 0.0):	 total squared error = 0.00638444, marker error: RMS = 0.0252675, max = 0.0394004 (IJ)
+[2025-02-24 15:08:56.275] [info] Frame 1 (t = 0.02):	 total squared error = 0.00638373, marker error: RMS = 0.025266, max = 0.0393866 (IJ)
+[2025-02-24 15:08:56.283] [info] Frame 2 (t = 0.04):	 total squared error = 0.00638093, marker error: RMS = 0.0252605, max = 0.0393195 (IJ)
+[2025-02-24 15:08:56.291] [info] Frame 3 (t = 0.06):	 total squared error = 0.00638160, marker error: RMS = 0.0252618, max = 0.039248 (IJ)
+[2025-02-24 15:08:56.300] [info] Frame 4 (t = 0.08):	 total squared error = 0.00638294, marker error: RMS = 0.0252645, max = 0.039186 (IJ)
+[2025-02-24 15:08:56.310] [info] Frame 5 (t = 0.1):	 total squared error = 0.00638531, marker error: RMS = 0.0252692, max = 0.0391435 (IJ)
+[2025-02-24 15:08:56.326] [info] Frame 6 (t = 0.12):	 total squared error = 0.00638659, marker error: RMS = 0.0252717, max = 0.0391521 (IJ)
+[2025-02-24 15:08:56.341] [info] Frame 7 (t = 0.14):	 total squared error = 0.00639243, marker error: RMS = 0.0252832, max = 0.0391619 (IJ)
+[2025-02-24 15:08:56.365] [info] Frame 8 (t = 0.16):	 total squared error = 0.00639789, marker error: RMS = 0.0252941, max = 0.0391232 (IJ)
+[2025-02-24 15:08:56.369] [info] Frame 9 (t = 0.18):	 total squared error = 0.00640354, marker error: RMS = 0.0253052, max = 0.0391779 (IJ)
+[2025-02-24 15:08:56.378] [info] Frame 10 (t = 0.2):	 total squared error = 0.00641097, marker error: RMS = 0.0253199, max = 0.0392224 (IJ)
+[2025-02-24 15:08:56.386] [info] Frame 11 (t = 0.22):	 total squared error = 0.00641828, marker error: RMS = 0.0253343, max = 0.0392404 (IJ)
+[2025-02-24 15:08:56.393] [info] Frame 12 (t = 0.24):	 total squared error = 0.00642933, marker error: RMS = 0.0253561, max = 0.0393536 (IJ)
+[2025-02-24 15:08:56.400] [info] Frame 13 (t = 0.26):	 total squared error = 0.00644000, marker error: RMS = 0.0253771, max = 0.0394372 (IJ)
+[2025-02-24 15:08:56.408] [info] Frame 14 (t = 0.28):	 total squared error = 0.00645181, marker error: RMS = 0.0254004, max = 0.0395344 (IJ)
+[2025-02-24 15:08:56.415] [info] Frame 15 (t = 0.3):	 total squared error = 0.00646596, marker error: RMS = 0.0254283, max = 0.0396152 (IJ)
+[2025-02-24 15:08:56.424] [info] Frame 16 (t = 0.32):	 total squared error = 0.00648033, marker error: RMS = 0.0254565, max = 0.0397029 (IJ)
+[2025-02-24 15:08:56.430] [info] Frame 17 (t = 0.34):	 total squared error = 0.00649812, marker error: RMS = 0.0254914, max = 0.0397854 (IJ)
+[2025-02-24 15:08:56.438] [info] Frame 18 (t = 0.36):	 total squared error = 0.00651279, marker error: RMS = 0.0255202, max = 0.0398643 (IJ)
+[2025-02-24 15:08:56.446] [info] Frame 19 (t = 0.38):	 total squared error = 0.00653014, marker error: RMS = 0.0255541, max = 0.0399236 (IJ)
+[2025-02-24 15:08:56.454] [info] Frame 20 (t = 0.4):	 total squared error = 0.00654738, marker error: RMS = 0.0255879, max = 0.0399759 (IJ)
+[2025-02-24 15:08:56.464] [info] Frame 21 (t = 0.42):	 total squared error = 0.00656501, marker error: RMS = 0.0256223, max = 0.0399927 (IJ)
+[2025-02-24 15:08:56.472] [info] Frame 22 (t = 0.44):	 total squared error = 0.00658193, marker error: RMS = 0.0256553, max = 0.0400283 (IJ)
+[2025-02-24 15:08:56.503] [info] Frame 23 (t = 0.46):	 total squared error = 0.00659853, marker error: RMS = 0.0256876, max = 0.0400295 (IJ)
+[2025-02-24 15:08:56.516] [info] Frame 24 (t = 0.48):	 total squared error = 0.00661236, marker error: RMS = 0.0257145, max = 0.0400175 (IJ)
+[2025-02-24 15:08:56.526] [info] Frame 25 (t = 0.5):	 total squared error = 0.00662430, marker error: RMS = 0.0257377, max = 0.0400390 (IJ)
+[2025-02-24 15:08:56.535] [info] Frame 26 (t = 0.52):	 total squared error = 0.00663364, marker error: RMS = 0.0257559, max = 0.0400371 (IJ)
+[2025-02-24 15:08:56.539] [info] Frame 27 (t = 0.54):	 total squared error = 0.00664143, marker error: RMS = 0.025771, max = 0.0400346 (IJ)
+[2025-02-24 15:08:56.546] [info] Frame 28 (t = 0.56):	 total squared error = 0.00664548, marker error: RMS = 0.0257788, max = 0.0400525 (IJ)
+[2025-02-24 15:08:56.550] [info] Frame 29 (t = 0.58):	 total squared error = 0.00664847, marker error: RMS = 0.0257846, max = 0.0400437 (IJ)
+[2025-02-24 15:08:56.555] [info] Frame 30 (t = 0.6):	 total squared error = 0.00664947, marker error: RMS = 0.0257866, max = 0.0400199 (IJ)
+[2025-02-24 15:08:56.563] [info] Frame 31 (t = 0.62):	 total squared error = 0.00664508, marker error: RMS = 0.025778, max = 0.0401117 (IJ)
+[2025-02-24 15:08:56.570] [info] Frame 32 (t = 0.64):	 total squared error = 0.00664200, marker error: RMS = 0.0257721, max = 0.0400993 (IJ)
+[2025-02-24 15:08:56.575] [info] Frame 33 (t = 0.66):	 total squared error = 0.00663782, marker error: RMS = 0.025764, max = 0.0401483 (IJ)
+[2025-02-24 15:08:56.581] [info] Frame 34 (t = 0.68):	 total squared error = 0.00663366, marker error: RMS = 0.0257559, max = 0.0402062 (IJ)
+[2025-02-24 15:08:56.586] [info] Frame 35 (t = 0.7):	 total squared error = 0.00662929, marker error: RMS = 0.0257474, max = 0.0402983 (IJ)
+[2025-02-24 15:08:56.601] [info] Frame 36 (t = 0.72):	 total squared error = 0.00662751, marker error: RMS = 0.025744, max = 0.0404639 (IJ)
+[2025-02-24 15:08:56.606] [info] Frame 37 (t = 0.74):	 total squared error = 0.00662706, marker error: RMS = 0.0257431, max = 0.0405705 (IJ)
+[2025-02-24 15:08:56.618] [info] Frame 38 (t = 0.76):	 total squared error = 0.00662800, marker error: RMS = 0.0257449, max = 0.0408587 (IJ)
+[2025-02-24 15:08:56.624] [info] Frame 39 (t = 0.78):	 total squared error = 0.00663840, marker error: RMS = 0.0257651, max = 0.0409910 (IJ)
+[2025-02-24 15:08:56.630] [info] Frame 40 (t = 0.8):	 total squared error = 0.00665403, marker error: RMS = 0.0257954, max = 0.0412039 (IJ)
+[2025-02-24 15:08:56.638] [info] Frame 41 (t = 0.82):	 total squared error = 0.00667592, marker error: RMS = 0.0258378, max = 0.0416111 (IJ)
+[2025-02-24 15:08:56.649] [info] Frame 42 (t = 0.84):	 total squared error = 0.00670036, marker error: RMS = 0.0258851, max = 0.0419187 (IJ)
+[2025-02-24 15:08:56.661] [info] Frame 43 (t = 0.86):	 total squared error = 0.00673779, marker error: RMS = 0.0259573, max = 0.0422257 (IJ)
+[2025-02-24 15:08:56.668] [info] Frame 44 (t = 0.88):	 total squared error = 0.00678303, marker error: RMS = 0.0260443, max = 0.0425398 (IJ)
+[2025-02-24 15:08:56.675] [info] Frame 45 (t = 0.9):	 total squared error = 0.00683575, marker error: RMS = 0.0261453, max = 0.0429030 (IJ)
+[2025-02-24 15:08:56.683] [info] Frame 46 (t = 0.92):	 total squared error = 0.00689494, marker error: RMS = 0.0262582, max = 0.0432852 (IJ)
+[2025-02-24 15:08:56.690] [info] Frame 47 (t = 0.94):	 total squared error = 0.00695960, marker error: RMS = 0.026381, max = 0.0436648 (IJ)
+[2025-02-24 15:08:56.693] [info] Frame 48 (t = 0.96):	 total squared error = 0.00703741, marker error: RMS = 0.0265281, max = 0.043923 (IJ)
+[2025-02-24 15:08:56.704] [info] Frame 49 (t = 0.98):	 total squared error = 0.00710027, marker error: RMS = 0.0266463, max = 0.0443787 (IJ)
+[2025-02-24 15:08:56.708] [info] Frame 50 (t = 1.0):	 total squared error = 0.00718511, marker error: RMS = 0.0268051, max = 0.0446119 (IJ)
+[2025-02-24 15:08:56.715] [info] Frame 51 (t = 1.02):	 total squared error = 0.00726364, marker error: RMS = 0.0269511, max = 0.0450494 (IJ)
+[2025-02-24 15:08:56.719] [info] Frame 52 (t = 1.04):	 total squared error = 0.00735182, marker error: RMS = 0.0271142, max = 0.0452424 (IJ)
+[2025-02-24 15:08:56.729] [info] Frame 53 (t = 1.06):	 total squared error = 0.00742015, marker error: RMS = 0.02724, max = 0.0457042 (IJ)
+[2025-02-24 15:08:56.733] [info] Frame 54 (t = 1.08):	 total squared error = 0.00750528, marker error: RMS = 0.0273958, max = 0.0458577 (IJ)
+[2025-02-24 15:08:56.743] [info] Frame 55 (t = 1.1):	 total squared error = 0.00757748, marker error: RMS = 0.0275272, max = 0.0462392 (IJ)
+[2025-02-24 15:08:56.747] [info] Frame 56 (t = 1.12):	 total squared error = 0.00765600, marker error: RMS = 0.0276695, max = 0.0463408 (IJ)
+[2025-02-24 15:08:56.758] [info] Frame 57 (t = 1.14):	 total squared error = 0.00772084, marker error: RMS = 0.0277864, max = 0.0466694 (IJ)
+[2025-02-24 15:08:56.763] [info] Frame 58 (t = 1.16):	 total squared error = 0.00778905, marker error: RMS = 0.0279089, max = 0.046742 (IJ)
+[2025-02-24 15:08:56.770] [info] Frame 59 (t = 1.18):	 total squared error = 0.00784869, marker error: RMS = 0.0280155, max = 0.0469575 (IJ)
+[2025-02-24 15:08:56.776] [info] Frame 60 (t = 1.2):	 total squared error = 0.00790556, marker error: RMS = 0.0281168, max = 0.0469978 (IJ)
+[2025-02-24 15:08:56.791] [info] Frame 61 (t = 1.22):	 total squared error = 0.00794718, marker error: RMS = 0.0281908, max = 0.0472851 (IJ)
+[2025-02-24 15:08:56.795] [info] Frame 62 (t = 1.24):	 total squared error = 0.00799265, marker error: RMS = 0.0282713, max = 0.0473083 (IJ)
+[2025-02-24 15:08:56.802] [info] Frame 63 (t = 1.26):	 total squared error = 0.00803067, marker error: RMS = 0.0283384, max = 0.047431 (IJ)
+[2025-02-24 15:08:56.807] [info] Frame 64 (t = 1.28):	 total squared error = 0.00806552, marker error: RMS = 0.0283999, max = 0.0474582 (IJ)
+[2025-02-24 15:08:56.815] [info] Frame 65 (t = 1.3):	 total squared error = 0.00809611, marker error: RMS = 0.0284537, max = 0.0475654 (IJ)
+[2025-02-24 15:08:56.821] [info] Frame 66 (t = 1.32):	 total squared error = 0.00812184, marker error: RMS = 0.0284988, max = 0.0476466 (IJ)
+[2025-02-24 15:08:56.827] [info] Frame 67 (t = 1.34):	 total squared error = 0.00814682, marker error: RMS = 0.0285426, max = 0.047718 (IJ)
+[2025-02-24 15:08:56.838] [info] Frame 68 (t = 1.36):	 total squared error = 0.00817071, marker error: RMS = 0.0285845, max = 0.0478822 (IJ)
+[2025-02-24 15:08:56.846] [info] Frame 69 (t = 1.38):	 total squared error = 0.00819352, marker error: RMS = 0.0286243, max = 0.047931 (IJ)
+[2025-02-24 15:08:56.852] [info] Frame 70 (t = 1.4):	 total squared error = 0.00821683, marker error: RMS = 0.028665, max = 0.0479864 (IJ)
+[2025-02-24 15:08:56.859] [info] Frame 71 (t = 1.42):	 total squared error = 0.00823969, marker error: RMS = 0.0287049, max = 0.0480857 (IJ)
+[2025-02-24 15:08:56.869] [info] Frame 72 (t = 1.44):	 total squared error = 0.00826768, marker error: RMS = 0.0287536, max = 0.0482058 (IJ)
+[2025-02-24 15:08:56.876] [info] Frame 73 (t = 1.46):	 total squared error = 0.00829429, marker error: RMS = 0.0287998, max = 0.048272 (IJ)
+[2025-02-24 15:08:56.884] [info] Frame 74 (t = 1.48):	 total squared error = 0.00832228, marker error: RMS = 0.0288484, max = 0.0483721 (IJ)
+[2025-02-24 15:08:56.890] [info] Frame 75 (t = 1.5):	 total squared error = 0.00835202, marker error: RMS = 0.0288999, max = 0.0484814 (IJ)
+[2025-02-24 15:08:56.896] [info] Frame 76 (t = 1.52):	 total squared error = 0.00838488, marker error: RMS = 0.0289567, max = 0.0486029 (IJ)
+[2025-02-24 15:08:56.906] [info] Frame 77 (t = 1.54):	 total squared error = 0.00842667, marker error: RMS = 0.0290287, max = 0.0487037 (IJ)
+[2025-02-24 15:08:56.912] [info] Frame 78 (t = 1.56):	 total squared error = 0.00846068, marker error: RMS = 0.0290872, max = 0.0488637 (IJ)
+[2025-02-24 15:08:56.919] [info] Frame 79 (t = 1.58):	 total squared error = 0.00849989, marker error: RMS = 0.0291546, max = 0.0489797 (IJ)
+[2025-02-24 15:08:56.925] [info] Frame 80 (t = 1.6):	 total squared error = 0.00853954, marker error: RMS = 0.0292225, max = 0.049124 (IJ)
+[2025-02-24 15:08:56.935] [info] Frame 81 (t = 1.62):	 total squared error = 0.00858517, marker error: RMS = 0.0293005, max = 0.0492995 (IJ)
+[2025-02-24 15:08:56.941] [info] Frame 82 (t = 1.64):	 total squared error = 0.00862832, marker error: RMS = 0.029374, max = 0.0493502 (IJ)
+[2025-02-24 15:08:56.947] [info] Frame 83 (t = 1.66):	 total squared error = 0.00866767, marker error: RMS = 0.0294409, max = 0.0495315 (IJ)
+[2025-02-24 15:08:56.959] [info] Frame 84 (t = 1.68):	 total squared error = 0.00871232, marker error: RMS = 0.0295166, max = 0.0496098 (IJ)
+[2025-02-24 15:08:56.965] [info] Frame 85 (t = 1.7):	 total squared error = 0.00875098, marker error: RMS = 0.0295821, max = 0.0497458 (IJ)
+[2025-02-24 15:08:56.971] [info] Frame 86 (t = 1.72):	 total squared error = 0.00878634, marker error: RMS = 0.0296418, max = 0.0498979 (IJ)
+[2025-02-24 15:08:56.979] [info] Frame 87 (t = 1.74):	 total squared error = 0.00881970, marker error: RMS = 0.029698, max = 0.0500121 (IJ)
+[2025-02-24 15:08:56.982] [info] Frame 88 (t = 1.76):	 total squared error = 0.00885705, marker error: RMS = 0.0297608, max = 0.0501047 (IJ)
+[2025-02-24 15:08:56.989] [info] Frame 89 (t = 1.78):	 total squared error = 0.00887348, marker error: RMS = 0.0297884, max = 0.0502294 (IJ)
+[2025-02-24 15:08:57.006] [info] Frame 90 (t = 1.8):	 total squared error = 0.00888379, marker error: RMS = 0.0298057, max = 0.0503237 (IJ)
+[2025-02-24 15:08:57.016] [info] Frame 91 (t = 1.82):	 total squared error = 0.00890405, marker error: RMS = 0.0298397, max = 0.0502172 (IJ)
+[2025-02-24 15:08:57.038] [info] Frame 92 (t = 1.84):	 total squared error = 0.00890793, marker error: RMS = 0.0298461, max = 0.0503763 (IJ)
+[2025-02-24 15:08:57.052] [info] Frame 93 (t = 1.86):	 total squared error = 0.00890947, marker error: RMS = 0.0298487, max = 0.0504057 (IJ)
+[2025-02-24 15:08:57.072] [info] Frame 94 (t = 1.88):	 total squared error = 0.00890955, marker error: RMS = 0.0298489, max = 0.0504042 (IJ)
+[2025-02-24 15:08:57.084] [info] Frame 95 (t = 1.9):	 total squared error = 0.00890196, marker error: RMS = 0.0298362, max = 0.0504314 (IJ)
+[2025-02-24 15:08:57.104] [info] Frame 96 (t = 1.92):	 total squared error = 0.00890642, marker error: RMS = 0.0298436, max = 0.0503563 (IJ)
+[2025-02-24 15:08:57.107] [info] Frame 97 (t = 1.94):	 total squared error = 0.00889329, marker error: RMS = 0.0298216, max = 0.0503815 (IJ)
+[2025-02-24 15:08:57.111] [info] Frame 98 (t = 1.96):	 total squared error = 0.00887876, marker error: RMS = 0.0297972, max = 0.0504003 (IJ)
+[2025-02-24 15:08:57.115] [info] Frame 99 (t = 1.98):	 total squared error = 0.00886272, marker error: RMS = 0.0297703, max = 0.0504048 (IJ)
+[2025-02-24 15:08:57.121] [info] Frame 100 (t = 2.0):	 total squared error = 0.00885128, marker error: RMS = 0.0297511, max = 0.0503171 (IJ)
+[2025-02-24 15:08:57.125] [info] Frame 101 (t = 2.02):	 total squared error = 0.00882938, marker error: RMS = 0.0297143, max = 0.0503573 (IJ)
+[2025-02-24 15:08:57.131] [info] Frame 102 (t = 2.04):	 total squared error = 0.00881343, marker error: RMS = 0.0296874, max = 0.0502696 (IJ)
+[2025-02-24 15:08:57.135] [info] Frame 103 (t = 2.06):	 total squared error = 0.00878797, marker error: RMS = 0.0296445, max = 0.0503081 (IJ)
+[2025-02-24 15:08:57.151] [info] Frame 104 (t = 2.08):	 total squared error = 0.00876461, marker error: RMS = 0.0296051, max = 0.0501932 (IJ)
+[2025-02-24 15:08:57.158] [info] Frame 105 (t = 2.1):	 total squared error = 0.00873777, marker error: RMS = 0.0295597, max = 0.0501481 (IJ)
+[2025-02-24 15:08:57.165] [info] Frame 106 (t = 2.12):	 total squared error = 0.00870491, marker error: RMS = 0.0295041, max = 0.0501141 (IJ)
+[2025-02-24 15:08:57.171] [info] Frame 107 (t = 2.14):	 total squared error = 0.00866694, marker error: RMS = 0.0294397, max = 0.0500612 (IJ)
+[2025-02-24 15:08:57.178] [info] Frame 108 (t = 2.16):	 total squared error = 0.00862239, marker error: RMS = 0.0293639, max = 0.0500030 (IJ)
+[2025-02-24 15:08:57.184] [info] Frame 109 (t = 2.18):	 total squared error = 0.00856933, marker error: RMS = 0.0292734, max = 0.0499219 (IJ)
+[2025-02-24 15:08:57.192] [info] Frame 110 (t = 2.2):	 total squared error = 0.00850508, marker error: RMS = 0.0291635, max = 0.0498421 (IJ)
+[2025-02-24 15:08:57.201] [info] Frame 111 (t = 2.22):	 total squared error = 0.00843435, marker error: RMS = 0.0290420, max = 0.0497030 (IJ)
+[2025-02-24 15:08:57.207] [info] Frame 112 (t = 2.24):	 total squared error = 0.00835555, marker error: RMS = 0.0289060, max = 0.049558 (IJ)
+[2025-02-24 15:08:57.213] [info] Frame 113 (t = 2.26):	 total squared error = 0.00826758, marker error: RMS = 0.0287534, max = 0.0493463 (IJ)
+[2025-02-24 15:08:57.219] [info] Frame 114 (t = 2.28):	 total squared error = 0.00816650, marker error: RMS = 0.0285771, max = 0.0491255 (IJ)
+[2025-02-24 15:08:57.225] [info] Frame 115 (t = 2.3):	 total squared error = 0.00806061, marker error: RMS = 0.0283912, max = 0.0488045 (IJ)
+[2025-02-24 15:08:57.235] [info] Frame 116 (t = 2.32):	 total squared error = 0.00794051, marker error: RMS = 0.0281789, max = 0.0484293 (IJ)
+[2025-02-24 15:08:57.241] [info] Frame 117 (t = 2.34):	 total squared error = 0.00781913, marker error: RMS = 0.0279627, max = 0.0480839 (IJ)
+[2025-02-24 15:08:57.248] [info] Frame 118 (t = 2.36):	 total squared error = 0.00769245, marker error: RMS = 0.0277353, max = 0.0476978 (IJ)
+[2025-02-24 15:08:57.259] [info] Frame 119 (t = 2.38):	 total squared error = 0.00756213, marker error: RMS = 0.0274993, max = 0.0471736 (IJ)
+[2025-02-24 15:08:57.266] [info] Frame 120 (t = 2.4):	 total squared error = 0.00742894, marker error: RMS = 0.0272561, max = 0.046746 (IJ)
+[2025-02-24 15:08:57.274] [info] Frame 121 (t = 2.42):	 total squared error = 0.00729858, marker error: RMS = 0.0270159, max = 0.0462674 (IJ)
+[2025-02-24 15:08:57.280] [info] Frame 122 (t = 2.44):	 total squared error = 0.00717301, marker error: RMS = 0.0267825, max = 0.0457508 (IJ)
+[2025-02-24 15:08:57.292] [info] Frame 123 (t = 2.46):	 total squared error = 0.00705334, marker error: RMS = 0.0265581, max = 0.0450883 (IJ)
+[2025-02-24 15:08:57.298] [info] Frame 124 (t = 2.48):	 total squared error = 0.00693990, marker error: RMS = 0.0263437, max = 0.0446151 (IJ)
+[2025-02-24 15:08:57.302] [info] Frame 125 (t = 2.5):	 total squared error = 0.00683554, marker error: RMS = 0.0261449, max = 0.0441509 (IJ)
+[2025-02-24 15:08:57.309] [info] Frame 126 (t = 2.52):	 total squared error = 0.00675543, marker error: RMS = 0.0259912, max = 0.0435786 (IJ)
+[2025-02-24 15:08:57.324] [info] Frame 127 (t = 2.54):	 total squared error = 0.00668742, marker error: RMS = 0.0258601, max = 0.042933 (IJ)
+[2025-02-24 15:08:57.330] [info] Frame 128 (t = 2.56):	 total squared error = 0.00663384, marker error: RMS = 0.0257562, max = 0.0424782 (IJ)
+[2025-02-24 15:08:57.334] [info] Frame 129 (t = 2.58):	 total squared error = 0.00659574, marker error: RMS = 0.0256822, max = 0.0421068 (IJ)
+[2025-02-24 15:08:57.341] [info] Frame 130 (t = 2.6):	 total squared error = 0.00658498, marker error: RMS = 0.0256612, max = 0.0416289 (IJ)
+[2025-02-24 15:08:57.354] [info] Frame 131 (t = 2.62):	 total squared error = 0.00659375, marker error: RMS = 0.0256783, max = 0.0411253 (IJ)
+[2025-02-24 15:08:57.360] [info] Frame 132 (t = 2.64):	 total squared error = 0.00661289, marker error: RMS = 0.0257155, max = 0.0407667 (IJ)
+[2025-02-24 15:08:57.367] [info] Frame 133 (t = 2.66):	 total squared error = 0.00665078, marker error: RMS = 0.0257891, max = 0.0404642 (IJ)
+[2025-02-24 15:08:57.378] [info] Frame 134 (t = 2.68):	 total squared error = 0.00670563, marker error: RMS = 0.0258952, max = 0.0404092 (GH)
+[2025-02-24 15:08:57.385] [info] Frame 135 (t = 2.7):	 total squared error = 0.00676781, marker error: RMS = 0.0260150, max = 0.0409654 (GH)
+[2025-02-24 15:08:57.391] [info] Frame 136 (t = 2.72):	 total squared error = 0.00684218, marker error: RMS = 0.0261576, max = 0.0414954 (GH)
+[2025-02-24 15:08:57.401] [info] Frame 137 (t = 2.74):	 total squared error = 0.00692760, marker error: RMS = 0.0263203, max = 0.0418761 (GH)
+[2025-02-24 15:08:57.406] [info] Frame 138 (t = 2.76):	 total squared error = 0.00701409, marker error: RMS = 0.0264841, max = 0.0423619 (GH)
+[2025-02-24 15:08:57.411] [info] Frame 139 (t = 2.78):	 total squared error = 0.00710463, marker error: RMS = 0.0266545, max = 0.0428084 (GH)
+[2025-02-24 15:08:57.421] [info] Frame 140 (t = 2.8):	 total squared error = 0.00719977, marker error: RMS = 0.0268324, max = 0.0430206 (GH)
+[2025-02-24 15:08:57.427] [info] Frame 141 (t = 2.82):	 total squared error = 0.00729090, marker error: RMS = 0.0270017, max = 0.0433833 (GH)
+[2025-02-24 15:08:57.433] [info] Frame 142 (t = 2.84):	 total squared error = 0.00738173, marker error: RMS = 0.0271693, max = 0.043719 (GH)
+[2025-02-24 15:08:57.440] [info] Frame 143 (t = 2.86):	 total squared error = 0.00746972, marker error: RMS = 0.0273308, max = 0.0440332 (GH)
+[2025-02-24 15:08:57.444] [info] Frame 144 (t = 2.88):	 total squared error = 0.00755517, marker error: RMS = 0.0274867, max = 0.0441807 (GH)
+[2025-02-24 15:08:57.451] [info] Frame 145 (t = 2.9):	 total squared error = 0.00763350, marker error: RMS = 0.0276288, max = 0.0445881 (GH)
+[2025-02-24 15:08:57.454] [info] Frame 146 (t = 2.92):	 total squared error = 0.00770857, marker error: RMS = 0.0277643, max = 0.0447307 (GH)
+[2025-02-24 15:08:57.461] [info] Frame 147 (t = 2.94):	 total squared error = 0.00777493, marker error: RMS = 0.0278836, max = 0.0450010 (GH)
+[2025-02-24 15:08:57.464] [info] Frame 148 (t = 2.96):	 total squared error = 0.00783817, marker error: RMS = 0.0279967, max = 0.0451508 (GH)
+[2025-02-24 15:08:57.481] [info] Frame 149 (t = 2.98):	 total squared error = 0.00788470, marker error: RMS = 0.0280797, max = 0.0450139 (GH)
+[2025-02-24 15:08:57.494] [info] Frame 150 (t = 3.0):	 total squared error = 0.00793308, marker error: RMS = 0.0281657, max = 0.0451325 (GH)
+[2025-02-24 15:08:57.512] [info] Frame 151 (t = 3.02):	 total squared error = 0.00797656, marker error: RMS = 0.0282428, max = 0.0452544 (GH)
+[2025-02-24 15:08:57.523] [info] Frame 152 (t = 3.04):	 total squared error = 0.00801475, marker error: RMS = 0.0283103, max = 0.0454147 (GH)
+[2025-02-24 15:08:57.538] [info] Frame 153 (t = 3.06):	 total squared error = 0.00804655, marker error: RMS = 0.0283664, max = 0.0455554 (GH)
+[2025-02-24 15:08:57.549] [info] Frame 154 (t = 3.08):	 total squared error = 0.00807329, marker error: RMS = 0.0284135, max = 0.0456336 (GH)
+[2025-02-24 15:08:57.558] [info] Frame 155 (t = 3.1):	 total squared error = 0.00809463, marker error: RMS = 0.0284511, max = 0.0457199 (GH)
+[2025-02-24 15:08:57.566] [info] Frame 156 (t = 3.12):	 total squared error = 0.00811015, marker error: RMS = 0.0284783, max = 0.0457781 (GH)
+[2025-02-24 15:08:57.575] [info] Frame 157 (t = 3.14):	 total squared error = 0.00812081, marker error: RMS = 0.028497, max = 0.0458404 (GH)
+[2025-02-24 15:08:57.581] [info] Frame 158 (t = 3.16):	 total squared error = 0.00812845, marker error: RMS = 0.0285104, max = 0.0458918 (GH)
+[2025-02-24 15:08:57.585] [info] Frame 159 (t = 3.18):	 total squared error = 0.00812878, marker error: RMS = 0.028511, max = 0.0459050 (GH)
+[2025-02-24 15:08:57.595] [info] Frame 160 (t = 3.2):	 total squared error = 0.00811363, marker error: RMS = 0.0284844, max = 0.0458941 (GH)
+[2025-02-24 15:08:57.606] [info] Frame 161 (t = 3.22):	 total squared error = 0.00809432, marker error: RMS = 0.0284505, max = 0.0458195 (GH)
+[2025-02-24 15:08:57.614] [info] Frame 162 (t = 3.24):	 total squared error = 0.00806830, marker error: RMS = 0.0284048, max = 0.0457531 (GH)
+[2025-02-24 15:08:57.620] [info] Frame 163 (t = 3.26):	 total squared error = 0.00803527, marker error: RMS = 0.0283466, max = 0.0456745 (GH)
+[2025-02-24 15:08:57.622] [info] Frame 164 (t = 3.28):	 total squared error = 0.00798969, marker error: RMS = 0.028266, max = 0.0456484 (GH)
+[2025-02-24 15:08:57.625] [info] Frame 165 (t = 3.3):	 total squared error = 0.00793423, marker error: RMS = 0.0281678, max = 0.0455754 (GH)
+[2025-02-24 15:08:57.633] [info] Frame 166 (t = 3.32):	 total squared error = 0.00786442, marker error: RMS = 0.0280436, max = 0.0451734 (GH)
+[2025-02-24 15:08:57.636] [info] Frame 167 (t = 3.34):	 total squared error = 0.00778843, marker error: RMS = 0.0279078, max = 0.0450449 (GH)
+[2025-02-24 15:08:57.642] [info] Frame 168 (t = 3.36):	 total squared error = 0.00770384, marker error: RMS = 0.0277558, max = 0.0446726 (GH)
+[2025-02-24 15:08:57.645] [info] Frame 169 (t = 3.38):	 total squared error = 0.00761328, marker error: RMS = 0.0275922, max = 0.0444592 (GH)
+[2025-02-24 15:08:57.654] [info] Frame 170 (t = 3.4):	 total squared error = 0.00750970, marker error: RMS = 0.0274038, max = 0.0439889 (GH)
+[2025-02-24 15:08:57.657] [info] Frame 171 (t = 3.42):	 total squared error = 0.00741051, marker error: RMS = 0.0272223, max = 0.0436774 (GH)
+[2025-02-24 15:08:57.661] [info] Frame 172 (t = 3.44):	 total squared error = 0.00731028, marker error: RMS = 0.0270375, max = 0.0432809 (GH)
+[2025-02-24 15:08:57.675] [info] Frame 173 (t = 3.46):	 total squared error = 0.00720732, marker error: RMS = 0.0268464, max = 0.0427163 (GH)
+[2025-02-24 15:08:57.681] [info] Frame 174 (t = 3.48):	 total squared error = 0.00711236, marker error: RMS = 0.026669, max = 0.0422396 (GH)
+[2025-02-24 15:08:57.685] [info] Frame 175 (t = 3.5):	 total squared error = 0.00702505, marker error: RMS = 0.0265048, max = 0.0416818 (GH)
+[2025-02-24 15:08:57.691] [info] InverseKinematicsTool completed 176 frames in 1 second(s).
