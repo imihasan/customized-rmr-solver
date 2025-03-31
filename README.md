@@ -1,4 +1,4 @@
-# Modeling Glenohumeral Stability in Musculoskeletal Simulations  
+# Customized RMR Solver 
 
 This repository includes a customized version of the **Rapid Muscle Redundancy (RMR) solver** integrated with different formulations of **glenohumeral stability**.  
 
