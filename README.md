@@ -29,3 +29,5 @@ Dataset available at **DOI:** [10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38](htt
 
 ## Funding
 This work was funded by the Promobilia Foundation, and the Swedish Research Council. 
+
+![Image](https://github.com/user-attachments/assets/efa371cf-a043-45bf-aa30-0d9fa36741b9)
