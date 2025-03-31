@@ -32,7 +32,7 @@ Please cite this work as:
 
 
 ## Funding
-This work was funded by the Promobilia Foundation, and the Swedish Research Council. 
+This work was funded by the Promobilia Foundation, and the Swedish Research Council, Stockholm, Sweden. 
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1279341c-86dd-41ad-ba88-712d21e1af96" width="400" hspace="50">
