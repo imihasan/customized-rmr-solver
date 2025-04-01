@@ -76,7 +76,7 @@ Customization of the original RMR solver and integration of the different stabil
 
 ## License
 - The code included in this repository is licensed under the Apache 2.0 license (see the `LICENSE_code` file).
-- The thoracoscapular shoulder model is licensed under CC BY 4.0 Use Agreement terms. Find more information at: **DOI:** [10.3389/fnbot.2019.0009](https://doi.org/10.3389/fnbot.2019.00090)
-- The validation dataset is licensed under CC0 1.0 Universal terms. Find more information at: **DOI:** [10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38](https://doi.org/10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38)
+- The thoracoscapular shoulder model is licensed under CC BY 4.0 Use Agreement terms. Find more information at **DOI:** [10.3389/fnbot.2019.0009](https://doi.org/10.3389/fnbot.2019.00090)
+- The validation dataset is licensed under CC0 1.0 Universal terms. Find more information at **DOI:** [10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38](https://doi.org/10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38)
 
 
