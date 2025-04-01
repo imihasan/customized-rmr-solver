@@ -49,6 +49,9 @@ To generate the graphs used in the paper or other customized graphs:
 - Navigate to Personal_Results
 - Customize/Run Generate_Graphs.m
 
+## Issues
+If you experience ay problems running the code, feel free to open an issue and we will try help you!
+
 ## Publications
 Please cite this work as:
 
