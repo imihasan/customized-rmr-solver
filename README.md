@@ -46,7 +46,7 @@ To solve muscle redundancy:
 - Run the file
 
 To generate the graphs used in the paper or other customized graphs:
-- Navigate to Persoal_Results
+- Navigate to Personal_Results
 - Customize/Run Generate_Graphs.m
 
 ## Publications
