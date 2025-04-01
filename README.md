@@ -27,6 +27,19 @@ In this customized version, we integrated different formulations to model glenoh
 A dataset of upper body kinematics and glenohumeral contact forces, obtained from an instrumented shoulder prosthesis, was used to validate the estimated magnitude and direction of the glenohumeral contact force across the different stability formulations.
 Dataset available at **DOI:** [10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38](https://doi.org/10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38)
 
+## Requirements
+The code in this repository was implemented and tested using:
+
+  -  **MATLAB 2023a**: Optimization and Signal Processing Toolboxes are required
+     
+  - **OpenSim 4.4**: [Download here](https://simtk.org/frs/?group_id=91), and Follow the instructions [here](https://simtk-confluence.stanford.edu:8443/display/OpenSim/Scripting+with+Matlab) to set up the OpenSim MATLAB API.
+
+  The code is not guaranteed to run on different versions of these softwares
+
+## Code Structure
+The code is organized as follows:
+
+
 ## Publications
 Please cite this work as:
 
@@ -47,16 +60,4 @@ Customization of the original RMR solver and integration of the different stabil
   <img src="https://github.com/user-attachments/assets/cf9c908b-f8f7-413e-9b7f-19e1e80450b1" width="500">
 </p>
 
-
-## Requirements
-The code in this repository was implemented and tested using:
-
-  -  **MATLAB 2023a**: Optimization and Signal Processing Toolboxes are required
-     
-  - **OpenSim 4.4**: [Download here](https://simtk.org/frs/?group_id=91), and Follow the instructions [here](https://simtk-confluence.stanford.edu:8443/display/OpenSim/Scripting+with+Matlab) to set up the OpenSim MATLAB API.
-
-  The code is not guaranteed to run on different versions of these softwares
-
-  ## Code Structure
-  The code is organized as follows
 
