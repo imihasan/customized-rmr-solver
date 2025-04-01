@@ -47,3 +47,17 @@ Customization of the original RMR solver and integration of the different stabil
   <img src="https://github.com/user-attachments/assets/cf9c908b-f8f7-413e-9b7f-19e1e80450b1" width="500">
 </p>
 
+
+## Requirements
+The code in this repository was implemented and tested using:
+
+  -  **MATLAB 2023a**:
+    -  Optimization and Signal Processing Toolboxes are required
+  - **OpenSim 4.4**: [Download here](https://simtk.org/frs/?group_id=91).
+    - Follow the instructions [here](https://simtk-confluence.stanford.edu:8443/display/OpenSim/Scripting+with+Matlab) to set up the OpenSim MATLAB API.
+
+  The code is not guaranteed to run on different versions of these softwares
+
+  ## Code Structure
+  The code is organized as follows
+
