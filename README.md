@@ -36,9 +36,18 @@ The code in this repository was implemented and tested using:
 
   The code is not guaranteed to run on different versions of these softwares
 
-## Code Structure
-The code is organized as follows:
+## Running the Code
+To solve muscle redundancy:
+- Navigate to Customized RMR Solver and open main_analyse_dataset.m
+- Define iput flags to determine which stability formulation to be used
+- Select the input model
+- locate the trc files
+- Set the saving path
+- Run the file
 
+To generate the graphs used in the paper or other customized graphs:
+- Navigate to Persoal_Results
+- Customize/Run Generate_Graphs.m
 
 ## Publications
 Please cite this work as:
@@ -59,5 +68,6 @@ Customization of the original RMR solver and integration of the different stabil
 <p align="center">
   <img src="https://github.com/user-attachments/assets/cf9c908b-f8f7-413e-9b7f-19e1e80450b1" width="500">
 </p>
+
 
 
