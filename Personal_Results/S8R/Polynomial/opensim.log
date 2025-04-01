@@ -1,0 +1,117 @@
+[2025-03-16 16:22:28.947] [info] Updating Model file from 40000 to latest format...
+[2025-03-16 16:22:29.017] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Polynomial\transformed_MSbfkg1_Model.osim
+[2025-03-16 16:22:29.018] [warning] Couldn't find file 'thorax.vtp'.
+[2025-03-16 16:22:29.018] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-03-16 16:22:29.019] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-03-16 16:22:29.019] [warning] Couldn't find file 'scapula.vtp'.
+[2025-03-16 16:22:29.214] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:22:29.214] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:22:29.215] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:22:29.215] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:22:37.979] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSbfkg1.trc (27 markers, 398 frames)
+[2025-03-16 16:28:01.570] [info] Updating Model file from 40000 to latest format...
+[2025-03-16 16:28:01.579] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Polynomial\transformed_MSffkg1_Model.osim
+[2025-03-16 16:28:01.579] [warning] Couldn't find file 'thorax.vtp'.
+[2025-03-16 16:28:01.579] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-03-16 16:28:01.579] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-03-16 16:28:01.579] [warning] Couldn't find file 'scapula.vtp'.
+[2025-03-16 16:28:01.609] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:28:01.609] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:28:01.609] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:28:01.609] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:28:08.123] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSffkg1.trc (27 markers, 566 frames)
+[2025-03-16 16:47:44.836] [info] Updating Model file from 40000 to latest format...
+[2025-03-16 16:47:44.844] [info] Loaded model ThoracoscapularShoulderModel from file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\Personal_Results\S8R\With GH Constraint\New Transformation\Polynomial\transformed_MSabdkg1_Model.osim
+[2025-03-16 16:47:44.845] [warning] Couldn't find file 'thorax.vtp'.
+[2025-03-16 16:47:44.845] [warning] Couldn't find file 'groundspine.vtp'.
+[2025-03-16 16:47:44.845] [warning] Couldn't find file 'clavicle.vtp'.
+[2025-03-16 16:47:44.845] [warning] Couldn't find file 'scapula.vtp'.
+[2025-03-16 16:47:44.894] [warning] Visualizer couldn't open thorax.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\thorax.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:47:44.894] [warning] Visualizer couldn't open groundspine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\groundspine.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:47:44.895] [warning] Visualizer couldn't open clavicle.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\clavicle.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:47:44.896] [warning] Visualizer couldn't open scapula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'C:\OpenSim 4.4\opensim\..\\Geometry\scapula.vtp' with error 'Failed to open file (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-03-16 16:47:50.773] [info] Loaded marker file C:\Users\ibrah\OneDrive - KTH\Model Validation - Orthoload\rmr-solver-1.0 - original\rmr-solver-1.0\ExperimentalData\S8R\trc\transformed_MSabdkg1.trc (27 markers, 482 frames)
