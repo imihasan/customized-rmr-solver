@@ -55,6 +55,8 @@ If you experience ay problems running the code, feel free to open an issue and w
 ## Publications
 Please cite this work as:
 
+- Ibrahim Mohammed I. Hasan, Italo Belli, Ajay Seth, and Elena M. gutierrez-Farewik. "Modeling glenohumeral stability in musculoskeletal simulations: A validation study with \emph{in vivo} contact forces". Manuscript.
+
 
 ## Funding
 This work was funded by the Promobilia Foundation, and the Swedish Research Council, Stockholm, Sweden. 
