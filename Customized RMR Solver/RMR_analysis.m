@@ -94,7 +94,7 @@ addpath(pathstr)
 cd ..\
 path_to_repo = pwd;
 addpath(path_to_repo)
-addpath(fullfile(path_to_repo, 'Code\Data Processing\'))
+addpath(fullfile(path_to_repo, 'Customized RMR Solver\Data Processing\'))
 
 % cd to Personal Results to have all the results saved there
 cd(saving_path);

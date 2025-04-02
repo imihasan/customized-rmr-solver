@@ -32,10 +32,10 @@ addpath(pathstr)
 cd ..\
 path_to_repo = pwd;
 addpath(path_to_repo)
-addpath(fullfile(path_to_repo, 'Code\Data Processing\'))
+addpath(fullfile(path_to_repo, 'Customized RMR Solver\Data Processing\'))
 
-
-% Flags (Select whether to enforce constraints)
+%% Define Flags
+% Flags
 % enforcing continuity of the activations from one timestep to the next, 
 % to respect first-order dynamics
 dynamic_bounds = true;
@@ -54,19 +54,8 @@ execl_clav=0;
 % execlude scaula winging coordinate from matching
 execl_wing=0;    
 
-% where you have the experimental files (.trc)
-trc_path = fullfile(path_to_repo, 'ExperimentalData\S8R\trc');
 
-% where to save the results
-Edit_tag='Test'; %name of the folder where results will be saved
-mkdir(fullfile(path_to_repo, ['Personal_Results\S8R\' Edit_tag]));
-saving_path = fullfile(path_to_repo, ['Personal_Results\S8R\' Edit_tag]);
-%Write a text file to describe the changes or the conditions you have made
-%in this trial
-Edit_description="Description_Here";
-writelines(Edit_description,fullfile(saving_path,"Description.txt"));
-
-% Select model
+%% Select the imput model
 modelFile_2kg = append(path_to_repo, '\OpenSim Models\OrthoModel_2kgWeight.osim');
 model_2kg = Model(modelFile_2kg);
 
@@ -76,6 +65,10 @@ model_base=Model(path_to_repo+"\OpenSim Models\BaseModel.osim");
 model_2kg.updBodySet().get("hand").setMass(model_base.updBodySet().get("hand").getMass()+2.4);
 model_2kg.updBodySet().get("hand").setMassCenter(Vec3(0, -0.03, 0));
 model_2kg.finalizeConnections();
+
+%% Locate the trc file
+% where you have the experimental files (.trc)
+trc_path = fullfile(path_to_repo, 'ExperimentalData\S8R\trc');
 
 % Select the experimental data to be considered
 dataset_considered = 'Orthoload';
@@ -88,18 +81,30 @@ else
     num_files = 1;
 end
 
+%% Set the weight of the scapula coordinates
 % Set the weight for the various scapula coordinates in IK
 % This is to achieve a good agreement between scapula upward rotation and
-% shoulder elevation (as reported in the paper)
+% shoulder elevation
+% Note: applying these weights is commented out in RMR RMR_analysis.m
 weight_abd = 0.0001;
 weight_elev = 0.0001;
 weight_up_rot = 0.0002;
 weigth_wing = 0.0001;
 weight_coord = [weight_abd, weight_elev, weight_up_rot, weigth_wing];
 
-% Downsampling
+%% Downsampling
 time_interval = 1;
 t_end=4; %set the end time
+
+%% Choose where to save the results
+% where to save the results
+Edit_tag='Test'; %name of the folder where results will be saved
+mkdir(fullfile(path_to_repo, ['Personal_Results\S8R\' Edit_tag]));
+saving_path = fullfile(path_to_repo, ['Personal_Results\S8R\' Edit_tag]);
+%Write a text file to describe the changes or the conditions you have made
+%in this trial
+Edit_description="Description_Here";
+writelines(Edit_description,fullfile(saving_path,"Description.txt"));
 
 %% Run Rapid Muscle Redundancy (RMR) solver
 % preallocating arrays to hold information about the solutions
