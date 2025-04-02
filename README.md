@@ -70,7 +70,7 @@ Customization of the original RMR solver and integration of the different stabil
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/21647d49-faeb-4ca3-a492-ed93b9634450" width="500">
+  <img src="https://github.com/user-attachments/assets/c280173a-8689-47fa-8f33-fcb32693e0f1" width="500">
 </p>
 
 ## License
