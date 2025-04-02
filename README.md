@@ -15,8 +15,8 @@ In this customized version, we proposed different formulations to model glenohum
   - An **ellipse**  
   - A **polynomial fit** of empirical values obtained from **concavity compression tests**  
 - **Penalty terms** in the objective function as:
-  - **Conditional penalty**: that triggers if the direction of the contact force exceedes a specified circular stability border
-  - **Planar penalty**: increases as the direction of the glenohumeral contact force points further away from the glenoid cavity border. Here, the glenoid cavity is considered as a flat plane.This plane is the plane that contains the glenoid cavity border.
+  - **Conditional penalty**: that triggers if the direction of the contact force exceeds a specified circular stability border
+  - **Planar penalty**: increases as the direction of the glenohumeral contact force points further away from the glenoid cavity border. Here, the glenoid cavity is considered as a flat plane. This plane is the plane that contains the glenoid cavity border.
   -  **Curve penalty**: increases as the direction of the glenohumeral contact force points further away from the glenoid cavity border. Here, the curvature of the glenoid cavity is approximated as spherical.
 
  ## Musculoskeletal Model
