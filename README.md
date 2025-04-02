@@ -30,7 +30,7 @@ Dataset available at **DOI:** [10.4121/86db1d7d-13d9-4631-9c6b-1e3134a1ab38](htt
 ## Requirements
 The code in this repository was implemented and tested using:
 
-  -  **MATLAB 2023a**: Optimization and Signal Processing Toolboxes are required. **Note:** using earlier version of MATLAB may give some error. For example, the code was tested on MATLAB R2021a and some functions like  `writelines()` in `main_analyse_dataset.m`, and `quiver()` in `RMR_analysis.m` were not available in this version. These two functions, however, are just for data saving and ploting, and can be commented out. Similar issues may arise with earlier MATLAB versions. 
+  -  **MATLAB 2023a**: Optimization and Signal Processing Toolboxes are required. **Note:** using earlier version of MATLAB may give some error. For example, the code was tested on MATLAB R2021a and some functions like  `writelines()` in `main_analyse_dataset.m`, and `quiver()` in `RMR_analysis.m` were not available in this version. These two functions, however, are just for data saving and plotting, and can be commented out. Similar issues may arise with earlier MATLAB versions. 
      
   - **OpenSim 4.4**: [Download here](https://simtk.org/frs/?group_id=91), and Follow the instructions [here](https://simtk-confluence.stanford.edu:8443/display/OpenSim/Scripting+with+Matlab) to set up the OpenSim MATLAB API.
 
@@ -39,7 +39,7 @@ The code in this repository was implemented and tested using:
 ## Running the Code
 To solve muscle redundancy:
 - Navigate to Customized RMR Solver and open main_analyse_dataset.m
-- Define iput flags to determine which stability formulation to be used
+- Define input flags to determine which stability formulation to be used
 - Select the input model
 - locate the trc files
 - Set the saving path
@@ -50,7 +50,7 @@ To generate the graphs used in the paper or other customized graphs:
 - Customize/Run Generate_Graphs.m
 
 ## Issues
-If you experience ay problems running the code, feel free to open an issue and we will try help you!
+If you experience any problems running the code, feel free to open an issue and we will try help you!
 
 ## Publications
 Please cite this work as:
