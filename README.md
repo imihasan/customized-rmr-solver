@@ -8,16 +8,16 @@ The original RMR solver, modeled glenohumeral stability as an **inequality const
 
 The original RMR solver is available at: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8360269.svg)](https://doi.org/10.5281/zenodo.8360269)
 
-In this customized version, we integrated different formulations to model glenohumeral stability using:  
+In this customized version, we proposed different formulations to model glenohumeral stability using:  
 
 - **Inequality constraints**, where the direction of the glenohumeral contact force was constrained within different stability border approximations:  
   - A **point**  
   - An **ellipse**  
   - A **polynomial fit** of empirical values obtained from **concavity compression tests**  
-- **Penalty terms** in the objective function,
-  - **Conditional penalty** penalty: trigers if the direction of the contact force exceedes a speficied circular stability border
-  - **Planar penalty**: increases as the direction of the glenhumeral contact force points further away from the glenoid cavity border. Here, the glenoid cavity is considered as a flat plane.This plane is the plane that contains the glenoid caity border.
-  -  **Curve penalty**: increases as the direction of the glenhumeral contact force points further away from the glenoid cavity border. Here, the curvature of the glenoid cavity is approximated as spherical.
+- **Penalty terms** in the objective function as:
+  - **Conditional penalty**: that triggers if the direction of the contact force exceedes a specified circular stability border
+  - **Planar penalty**: increases as the direction of the glenohumeral contact force points further away from the glenoid cavity border. Here, the glenoid cavity is considered as a flat plane.This plane is the plane that contains the glenoid cavity border.
+  -  **Curve penalty**: increases as the direction of the glenohumeral contact force points further away from the glenoid cavity border. Here, the curvature of the glenoid cavity is approximated as spherical.
 
  ## Musculoskeletal Model
  All the analysis was performed on the thoracoscapular shoulder model **DOI:** [10.3389/fnbot.2019.0009](https://doi.org/10.3389/fnbot.2019.00090)
