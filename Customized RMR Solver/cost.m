@@ -38,8 +38,8 @@ elseif tag_cost=="planar"
     planar_Penalty=ratio;
     c = sum(w.*(x.^2))+3*planar_Penalty; %Planar Penalty
 elseif tag_cost=="curve"
-    rc=0.11; %raduis of the glenoud cavity sphere
-    dch=0.1-norm(Vec_H2GC);
+    rc=0.1; %raduis of the glenoud cavity sphere
+    dch=0.09-norm(Vec_H2GC);
     phl=(2*dch*cosd(180-theta)+sqrt((2*dch*cosd(180-theta))^2-4*(dch^2-rc^2)))/2;
     pgl_prime=phl*abs(sind(theta));
     beta=asind(pgl_prime/rc);
@@ -47,7 +47,7 @@ elseif tag_cost=="curve"
     fs=norm(fv_rotated)*sind(alpha); %tangential component to the curvature
     fc=norm(fv_rotated)*cosd(alpha); %nomal component to the curvature
     curve_Penalty=fs^2/fc^2;
-    c = sum(w.*(x.^2))+3*curve_Penalty; %Curve Penalty
+    c = sum(w.*(x.^2))+10*curve_Penalty; %Curve Penalty
 elseif tag_cost=="no_penalty"
     c = sum(w.*(x.^2)); %no penalty
 end

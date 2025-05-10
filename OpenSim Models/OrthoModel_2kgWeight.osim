@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<OpenSimDocument Version="40500">
+<OpenSimDocument Version="40000">
 	<Model name="ThoracoscapularShoulderModel">
 		<!--The model's ground reference frame.-->
 		<Ground name="ground">
@@ -1611,15 +1611,8 @@
 				<Millard2012EquilibriumMuscle name="TrapeziusScapula_M">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -1652,6 +1645,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -1705,15 +1705,8 @@
 				<Millard2012EquilibriumMuscle name="TrapeziusScapula_S">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -1746,6 +1739,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -1799,15 +1799,8 @@
 				<Millard2012EquilibriumMuscle name="TrapeziusScapula_I">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -1840,6 +1833,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -1893,15 +1893,8 @@
 				<Millard2012EquilibriumMuscle name="TrapeziusClavicle_S">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -1934,6 +1927,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -1987,15 +1987,8 @@
 				<Millard2012EquilibriumMuscle name="SerratusAnterior_I">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2028,6 +2021,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2081,15 +2081,8 @@
 				<Millard2012EquilibriumMuscle name="SerratusAnterior_M">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2122,6 +2115,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2175,15 +2175,8 @@
 				<Millard2012EquilibriumMuscle name="SerratusAnterior_S">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2216,6 +2209,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2269,15 +2269,8 @@
 				<Millard2012EquilibriumMuscle name="Rhomboideus_S">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2310,6 +2303,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2363,15 +2363,8 @@
 				<Millard2012EquilibriumMuscle name="Rhomboideus_I">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2404,6 +2397,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2457,15 +2457,8 @@
 				<Millard2012EquilibriumMuscle name="LevatorScapulae">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2498,6 +2491,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2551,15 +2551,8 @@
 				<Millard2012EquilibriumMuscle name="Coracobrachialis">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2583,6 +2576,13 @@
 							<objects />
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2636,15 +2636,8 @@
 				<Millard2012EquilibriumMuscle name="DeltoideusClavicle_A">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2683,6 +2676,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2736,15 +2736,8 @@
 				<Millard2012EquilibriumMuscle name="DeltoideusScapula_P">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2783,6 +2776,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2836,15 +2836,8 @@
 				<Millard2012EquilibriumMuscle name="DeltoideusScapula_M">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2883,6 +2876,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -2936,15 +2936,8 @@
 				<Millard2012EquilibriumMuscle name="LatissimusDorsi_S">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -2974,8 +2967,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.12256400000000000627 -0.12377499999999999614</y>
+													<x> 0 3.14159</x>
+													<y> -0.122564 -0.123775</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99999644921000319</scale>
@@ -2986,8 +2979,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.098614999999999994329 -0.10676900000000000279</y>
+													<x> 0 3.14159</x>
+													<y> -0.098615 -0.106769</y>
 												</SimmSpline>
 											</function>
 											<scale>1.000006693199808</scale>
@@ -2998,8 +2991,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> 0.10101599999999999469 0.11497200000000000475</y>
+													<x> 0 3.14159</x>
+													<y> 0.101016 0.114972</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99997632556685589</scale>
@@ -3020,8 +3013,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.092789999999999997482 -0.094356999999999996431</y>
+													<x> 0 3.14159</x>
+													<y> -0.09279 -0.094357</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99999644921000319</scale>
@@ -3032,8 +3025,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.083290000000000002922 -0.084707000000000004514</y>
+													<x> 0 3.14159</x>
+													<y> -0.08329 -0.084707</y>
 												</SimmSpline>
 											</function>
 											<scale>1.000006693199808</scale>
@@ -3044,8 +3037,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> 0.13580999999999998629 0.14455699999999999106</y>
+													<x> 0 3.14159</x>
+													<y> 0.13581 0.144557</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99997632556685589</scale>
@@ -3075,6 +3068,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -3128,15 +3128,8 @@
 				<Millard2012EquilibriumMuscle name="LatissimusDorsi_M">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -3166,8 +3159,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.10388899999999999524 -0.10176100000000000423</y>
+													<x> 0 3.14159</x>
+													<y> -0.103889 -0.101761</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99999644921000319</scale>
@@ -3178,8 +3171,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.14758499999999999397 -0.14960399999999998699</y>
+													<x> 0 3.14159</x>
+													<y> -0.147585 -0.149604</y>
 												</SimmSpline>
 											</function>
 											<scale>1.000006693199808</scale>
@@ -3190,8 +3183,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> 0.11364699999999999802 0.1225659999999999944</y>
+													<x> 0 3.14159</x>
+													<y> 0.113647 0.122566</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99997632556685589</scale>
@@ -3212,8 +3205,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.076221999999999998088 -0.077788999999999997037</y>
+													<x> 0 3.14159</x>
+													<y> -0.076222 -0.077789</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99999644921000319</scale>
@@ -3224,8 +3217,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.11035100000000000464 -0.11176800000000000623</y>
+													<x> 0 3.14159</x>
+													<y> -0.110351 -0.111768</y>
 												</SimmSpline>
 											</function>
 											<scale>1.000006693199808</scale>
@@ -3236,8 +3229,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> 0.14002400000000000957 0.14877099999999998658</y>
+													<x> 0 3.14159</x>
+													<y> 0.140024 0.148771</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99997632556685589</scale>
@@ -3267,6 +3260,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -3320,15 +3320,8 @@
 				<Millard2012EquilibriumMuscle name="LatissimusDorsi_I">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -3358,8 +3351,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.040258000000000002117 -0.031577000000000000901</y>
+													<x> 0 3.14159</x>
+													<y> -0.040258 -0.031577</y>
 												</SimmSpline>
 											</function>
 											<scale>0.99997012066675772</scale>
@@ -3370,8 +3363,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> -0.11663800000000000556 -0.10947900000000000686</y>
+													<x> 0 3.14159</x>
+													<y> -0.116638 -0.109479</y>
 												</SimmSpline>
 											</function>
 											<scale>0.9999528100929127</scale>
@@ -3382,8 +3375,8 @@
 										<MultiplierFunction>
 											<function>
 												<SimmSpline>
-													<x> 0 3.1415899999999998826</x>
-													<y> 0.14621500000000001163 0.14966599999999999349</y>
+													<x> 0 3.14159</x>
+													<y> 0.146215 0.149666</y>
 												</SimmSpline>
 											</function>
 											<scale>1.0000182777011157</scale>
@@ -3413,6 +3406,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -3466,15 +3466,8 @@
 				<Millard2012EquilibriumMuscle name="PectoralisMajorClavicle_S">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>true</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -3507,6 +3500,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>true</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -3560,15 +3560,8 @@
 				<Millard2012EquilibriumMuscle name="PectoralisMajorThorax_I">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>true</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -3601,6 +3594,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>true</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -3654,15 +3654,8 @@
 				<Millard2012EquilibriumMuscle name="PectoralisMajorThorax_M">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>true</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -3695,6 +3688,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>true</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -3748,15 +3748,8 @@
 				<Millard2012EquilibriumMuscle name="TeresMajor">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>true</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -3797,6 +3790,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>true</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -3850,15 +3850,8 @@
 				<Millard2012EquilibriumMuscle name="Infraspinatus_I">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -3899,6 +3892,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -3952,15 +3952,8 @@
 				<Millard2012EquilibriumMuscle name="Infraspinatus_S">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4001,6 +3994,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4054,15 +4054,8 @@
 				<Millard2012EquilibriumMuscle name="PectoralisMinor">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4095,6 +4088,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4148,15 +4148,8 @@
 				<Millard2012EquilibriumMuscle name="TeresMinor">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4189,6 +4182,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4242,15 +4242,8 @@
 				<Millard2012EquilibriumMuscle name="Subscapularis_S">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4291,6 +4284,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4344,15 +4344,8 @@
 				<Millard2012EquilibriumMuscle name="Subscapularis_M">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4393,6 +4386,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4446,15 +4446,8 @@
 				<Millard2012EquilibriumMuscle name="Subscapularis_I">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4495,6 +4488,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4548,15 +4548,8 @@
 				<Millard2012EquilibriumMuscle name="Supraspinatus_P">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4589,6 +4582,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4642,15 +4642,8 @@
 				<Millard2012EquilibriumMuscle name="Supraspinatus_A">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4691,6 +4684,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4744,15 +4744,8 @@
 				<Millard2012EquilibriumMuscle name="TRIlong">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4776,6 +4769,13 @@
 							<objects />
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4829,15 +4829,8 @@
 				<Millard2012EquilibriumMuscle name="BIC_long">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4876,6 +4869,13 @@
 							</objects>
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>
@@ -4929,15 +4929,8 @@
 				<Millard2012EquilibriumMuscle name="BIC_brevis">
 					<!--Flag indicating whether the force is applied or not. If true the forceis applied to the MultibodySystem otherwise the force is not applied.NOTE: Prior to OpenSim 4.0, this behavior was controlled by the 'isDisabled' property, where 'true' meant that force was not being applied. Thus, if 'isDisabled' is true, then 'appliesForce` is false.-->
 					<appliesForce>true</appliesForce>
-					<!--The path of the actuator which defines length and lengthening speed.-->
+					<!--The set of points defining the path of the actuator.-->
 					<GeometryPath name="path">
-						<!--Default appearance attributes for this AbstractGeometryPath.-->
-						<Appearance>
-							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
-							<visible>false</visible>
-							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
-							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
-						</Appearance>
 						<!--The set of points defining the path-->
 						<PathPointSet>
 							<objects>
@@ -4961,6 +4954,13 @@
 							<objects />
 							<groups />
 						</PathWrapSet>
+						<!--Default appearance attributes for this GeometryPath-->
+						<Appearance>
+							<!--Flag indicating whether the associated Geometry is visible or hidden.-->
+							<visible>false</visible>
+							<!--The color, (red, green, blue), [0, 1], used to display the geometry. -->
+							<color>0.80000000000000004 0.10000000000000001 0.10000000000000001</color>
+						</Appearance>
 					</GeometryPath>
 					<!--The maximum force this actuator can produce.-->
 					<optimal_force>1</optimal_force>

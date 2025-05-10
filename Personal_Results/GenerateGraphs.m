@@ -7,69 +7,85 @@
 % navigate the path to where this file is saved
 path=pwd;
 
-folders=dir(fullfile(path,"S8R"));
+folders=dir(fullfile(path,"S8R","With Scaling"));
 for f=1:length(folders)-2
-    trials=dir(fullfile(path,"S8R",string(folders(f+2).name)+"\",'*.mat'));
+    trials=dir(fullfile(path,"S8R", "With Scaling",string(folders(f+2).name)+"\",'*.mat'));
     for t=1:length(trials)
-        load(fullfile(path,"S8R",string(folders(f+2).name),trials(t).name));
+        load(fullfile(path,"S8R", "With Scaling",string(folders(f+2).name),trials(t).name));
         l=0:length(xsol)-1;
         time=(1/frequency_solution)*l';
         vars=[time xsol(:,1:33) xsol(:,34:end) force_vector norm_fv_in_ground norm_fv_rotated norm_Vec_H2GCC Vec_GC2GEE Vec_H2GCC];
         varsNames=["time", muscle_order(1:33), muscle_order(34:end), "Fx", "Fy", "Fz", "Fgx", "Fgy", "Fgz", "Fnx", "Fny", "Fnz", "HCx", "HCy", "HCz", "GC2GEx", "GC2GEy", "GC2GEz", "H2GCCx", "H2GCCy", "H2GCCz"];
         Tab = array2table(vars,'VariableNames',varsNames);
-        writetable(Tab, fullfile(path, "S8R",string(folders(f+2).name),trials(t).name(1:end-4) +".txt"));
+        writetable(Tab, fullfile(path, "S8R", "With Scaling",string(folders(f+2).name),trials(t).name(1:end-4) +".txt"));
         fprintf("Writing file: "+ string(folders(f+2).name) + " - " +trials(t).name(1:end-4) +"\n")
     end
 end
 %% Plot contact force magnitude
-path=fullfile(pwd,"S8R");
-models="penalties"; %Change here which stability models you want to plot according to the conditions in the blelow if statement
+close all
+path=fullfile(pwd,"S8R", "With Scaling");
+
+models="senstivity_planar"; %Change here which stability models you want to plot according to the conditions in the blelow if statement
 
 if models == "constraints"
     folders=["Point", "Circle", "Polynomial","Ellipse"];
     Conditions=["Orthoload" folders];
     color=[0.6350 0.0780 0.1840; 0 0.4470 0.7410; 0.4660 0.6740 0.1880;  0.9290 0.6940 0.1250 ];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
+
 elseif models== "penalties"
     folders=["Conditional", "Planar", "Curve","None"];
     Conditions=["Orthoload" folders];
     color=[0.8500 0.3250 0.0980; 0.3010 0.7450 0.9330; 0.4940 0.1840 0.5560; 1 0 1];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
+
 elseif models=="senstivity_curve"
     folders=["Curve w=1", "Curve", "Curve w=10"];
     Conditions=["Orthoload" , "Looser", "Normal", "Tighter"];
-    trials_names=["Lateral Raise"];
+    trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
     color=[0.4660 0.6740 0.1880; 0 0.4470 0.7410; 0.6350 0.0780 0.1840];
+
 elseif models=="senstivity_conditional"
     folders=["Conditional w=1", "Conditional", "Conditional w=10"];
     Conditions=["Orthoload" , "Looser", "Normal", "Tighter"];
     trials_names=["Lateral Raise"];
     color=[0.4660 0.6740 0.1880; 0 0.4470 0.7410; 0.6350 0.0780 0.1840];
+
 elseif models=="senstivity_planar"
     folders=["Planar w=1", "Planar", "Planar w=10"];
     Conditions=["Orthoload" , "Looser", "Normal", "Tighter"];
     trials_names=["Lateral Raise","Posterior Raise","Anterior Raise"];
     color=[0.4660 0.6740 0.1880; 0 0.4470 0.7410; 0.6350 0.0780 0.1840];
+
 elseif models=="senstivity_polynomial"
     folders=["Polynomial Loose", "Polynomial", "Polynomial Tight"];
     Conditions=["Orthoload" , "Looser", "Normal", "Tighter"];
     trials_names=["Lateral Raise","Posterior Raise","Anterior Raise"];
     color=[0.4660 0.6740 0.1880; 0 0.4470 0.7410; 0.6350 0.0780 0.1840];
+
 elseif models=="all"
     folders=["Point", "Circle", "Polynomial","Ellipse", "Conditional", "Planar", "Curve","None"];
     Conditions=["Orthoload" folders];
     color=[0.6350 0.0780 0.1840; 0 0.4470 0.7410; 0.4660 0.6740 0.1880;  0.9290 0.6940 0.1250; 0.8500 0.3250 0.0980; 0.3010 0.7450 0.9330; 0.4940 0.1840 0.5560; 1 0 1 ];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
+
 elseif models=="rotator1"
     folders=["Point", "Planar"];
     Conditions=["Orthoload" folders];
     color=[0.6350 0.0780 0.1840; 0 0.4470 0.7410; 0.4940 0.1840 0.5560; 1 0 1 ];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
+
 elseif models=="rotator2"
     folders=["Planar", "Curve"];
     Conditions=["Orthoload" folders];
     color=[ 0.3010 0.7450 0.9330; 0.4940 0.1840 0.5560];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
+
+elseif models=="scaled"
+    folders=["Planar", "Test"];
+    Conditions=["Orthoload" folders];
+    color=[ 0.3010 0.7450 0.9330; 0.4940 0.1840 0.5560];
+    trials_names=["Lateral Raise"];
 end
 
 trials=dir(fullfile(path,folders(1)+"\",'*.mat'));
@@ -133,7 +149,7 @@ for t= 1:length(trials)
         
     end
     ylim([0 400])
-    saveas(fig,fullfile(pwd,"Figures",trials_names(t)+"_"+models+"_GHJCFMagnitude.pdf")); %name your file here
+    saveas(fig,fullfile(pwd,"Figures Scaled",trials_names(t)+"_"+models+"_GHJCFMagnitude.pdf")); %name your file here
 end
 
 %% RPlot root mean square error (RMSE)
@@ -184,7 +200,7 @@ ylim([-200 300])
 ax = gca;
 ax.FontSize = 15;
 box off
-saveas(fig,fullfile(pwd,"Figures",trials_names(t)+"_"+models+"_GHJCFMagnitude.RMSE.pdf"));
+saveas(fig,fullfile(pwd,"Figures Scaled",trials_names(t)+"_"+models+"_GHJCFMagnitude.RMSE.pdf"));
 
 %% Rotator Cuff Activations - Timeseries
 
@@ -200,15 +216,15 @@ for t=1:length(trials_names)
     fig=figure;
     hold on
     for c=1:length(Conditions)-1
-        m_rotator(t,c)=mean(mean(rotator{t,c}));
         plot(cond.time(1:idx2_osim),rotator{t,c}(:,1),color=color(c,:),LineWidth=2,LineStyle="-")
         plot(cond.time(1:idx2_osim),rotator{t,c}(:,2),color=color(c,:),LineWidth=2,LineStyle=":")
-        m_rotator_indiv{t,c}=mean(rotator{t,c});
+        plot(cond.time(1:idx2_osim),rotator{t,c}(:,3),color=color(c,:),LineWidth=2,LineStyle="--")
+        % plot(cond.time(1:idx2_osim),rotator{t,c}(:,4),color=color(c,:),LineWidth=2,LineStyle="-.")
     end 
-    legend('Subscapularis','Infraspinatus','Supraspinatus','Teres Minor')
+    %legend('Subscapularis','Infraspinatus','Supraspinatus','Teres Minor')
     box off
     ax = gca;
-    ax.FontSize = 15;
+    ax.FontSize = 20;
     title(trials_names(t))
     ylabel("Activation")
     xlabel("Time (s)")
@@ -221,7 +237,7 @@ for t=1:length(trials_names)
         xlim([0 4.5])
         
     end
-    saveas(fig,fullfile(pwd,"Figures",trials_names(t)+"_"+models+"_Rotator_Cuff_Activation.pdf"));
+    saveas(fig,fullfile(pwd,"Figures Scaled",trials_names(t)+"_"+models+"_Rotator_Cuff_Activation.pdf"));
 end
 
 %% Rotator Cuff Activation - Bar Plot
@@ -261,13 +277,13 @@ h = get(gca,'Children');
 
 ylim([0 0.5])
 title(models)
-saveas(fig,fullfile(pwd,"Figures",models+"_RotatorCuffActivation.pdf")); %name your file here
+saveas(fig,fullfile(pwd,"Figures Scaled",models+"_RotatorCuffActivation.pdf")); %name your file here
 
 %% GH-JCF Direction
+matlab.graphics.internal.setPrintPreferences('DefaultPaperPositionMode','auto')
+set(groot,'defaultFigurePaperPositionMode','auto')
 
-close all
-
-models="penalties"; %Change here 
+models="senstivity_polynomial"; %Change here 
 
 if models == "constraints"
     folders=["Point", "Circle", "Polynomial","Ellipse"];
@@ -275,14 +291,14 @@ if models == "constraints"
     color=[0.6350 0.0780 0.1840; 0 0.4470 0.7410; 0.4660 0.6740 0.1880;  0.9290 0.6940 0.1250 ];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
 elseif models== "penalties"
-    folders=["Conditional", "Planar", "Curve","None"];
+    folders=["Conditional", "Planar", "Curve"];
     Conditions=["Orthoload" folders];
     color=[0.8500 0.3250 0.0980; 0.3010 0.7450 0.9330; 0.4940 0.1840 0.5560; 1 0 1];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
 elseif models=="senstivity_curve"
     folders=["Curve w=1", "Curve", "Curve w=10"];
     Conditions=["Orthoload" , "Looser", "Normal", "Tighter"];
-    trials_names=["Lateral Raise"];
+    trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
     color=[0.4660 0.6740 0.1880; 0 0.4470 0.7410; 0.6350 0.0780 0.1840];
 elseif models=="senstivity_conditional"
     folders=["Conditional w=1", "Conditional", "Conditional w=10"];
@@ -300,11 +316,17 @@ elseif models=="senstivity_polynomial"
     Conditions=["Orthoload" , "Looser", "Normal", "Tighter"];
     trials_names=["Lateral Raise","Posterior Raise","Anterior Raise"];
     color=[0.4660 0.6740 0.1880; 0 0.4470 0.7410; 0.6350 0.0780 0.1840];
+elseif models=="all"
+    folders=["Point", "Circle", "Polynomial","Ellipse", "Conditional", "Planar", "Curve","None"];
+    Conditions=["Orthoload" folders];
+    color=[0.6350 0.0780 0.1840; 0 0.4470 0.7410; 0.4660 0.6740 0.1880;  0.9290 0.6940 0.1250; 0.8500 0.3250 0.0980; 0.3010 0.7450 0.9330; 0.4940 0.1840 0.5560; 1 0 1 ];
+    trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
 end
 
 
 
 trials=dir(fullfile(path,folders(1)+"\",'*.mat'));
+
 
 
 for t=1:length(trials_names)
@@ -313,21 +335,24 @@ for t=1:length(trials_names)
     
     indx1=find(Orthoload.Marker==1,1);
     if trials_names(t)=="Posterior Raise"
-        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=3.4,1)-1;
+        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=3.4,1)-1+indx1;
     elseif trials_names(t)=="Lateral Raise"
-        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=4,1)-1;
+        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=4,1)-1+indx1;
     else 
-        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=4.5,1)-1;
+        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=4.5,1)-1+indx1;
     end
 
     load(fullfile(path, folders(1),trials(t).name(1:end-4) +".mat"));
+    t_ortho=Orthoload.Time(indx1:indx2)-Orthoload.Time(indx1);
 
     F_ortho=[OrtholoadG.Fgx(indx1:indx2) OrtholoadG.Fgy(indx1:indx2) OrtholoadG.Fgz(indx1:indx2)];
     for f=1:length(F_ortho)
-        cosTheta = max(min(dot([0 0 -1],F_ortho(f,:))/(norm([0 0 -1])*norm(F_ortho(f,:))),1),-1);
-        F_ortho_norm(f,:)=25*F_ortho(f,:)/(norm(F_ortho(f,:)));
+        cosThetaa = max(min(dot([0 0 1],F_ortho(f,:))/(norm([0 0 1])*norm(F_ortho(f,:))),1),-1);
+
+        F_ortho_norm(f,:)=(25/abs(cosThetaa))*F_ortho(f,:)/(norm(F_ortho(f,:)));
     end
     fig=figure;
+   
     theta=0:0.001:2*pi;
     sc=norm(Vec_H2GCC(end,:))*1000;
 
@@ -344,18 +369,22 @@ for t=1:length(trials_names)
     
     %uncomment if you want to plot the ellipse and the polynomial
     %perimeters
-    % plot(x,y,LineWidth=1,LineStyle="--",Color=[color(4,:) 1]) % Plot Ellipse Perimeter
+    %plot(x,y,LineWidth=1,LineStyle="--",Color=[color(4,:) 1]) % Plot Ellipse Perimeter
+    
     hold on
-    % plot(yl,xl,LineWidth=1,LineStyle="--",Color=color(2,:)) % Plot Polynomial Fit
+    plot(2*yl,2*xl,LineWidth=1,LineStyle="--",Color=color(1,:)) % Plot Polynomial Fit
+    plot(yl,xl,LineWidth=1,LineStyle="--",Color=color(2,:)) % Plot Polynomial Fit
+    plot(0.5*yl,0.5*xl,LineWidth=1,LineStyle="--",Color=color(3,:)) % Plot Polynomial Fit
 
     axis equal
     ax=gca;
     hold on
     scatter(F_ortho_norm(:,1),F_ortho_norm(:,2), 40, [0.5 0.5 0.5], 'filled','MarkerFaceAlpha',0.2)
     scatter(mean(F_ortho_norm(:,1)),mean(F_ortho_norm(:,2)), 150, [0.5 0.5 0.5], 'filled','LineWidth',1,'MarkerEdgeColor','k')
-    clear F_ortho_norm F_ortho
+    
     for c=1:length(Conditions)-1
         load(fullfile(path, folders(c),trials(t).name(1:end-4) +".mat"));
+        t_optim(t,c)=tOptim;
 
         l=0:length(xsol)-1;
         time=(1/frequency_solution)*l';
@@ -386,17 +415,25 @@ for t=1:length(trials_names)
         
         scatter(-norm_fv_rotated(1:idx2_osim,2), -norm_fv_rotated(1:idx2_osim,3), 40, color(c,:), 'filled','MarkerFaceAlpha',0.2);
         scatter(mean(-norm_fv_rotated(1:idx2_osim,2)), mean(-norm_fv_rotated(1:idx2_osim,3)), 150, color(c,:), 'filled','LineWidth',1,'MarkerEdgeColor','k');
-        clear norm_fv_rotated force_vector 
-    end 
+        
+
+        % difference_rmse_y(t,c)=rmse(-norm_fv_rotated(1:idx2_osim,3),spline(t_ortho,F_ortho_norm(:,2),time));
+        % 
+        % difference_rmse_x(t,c)=rmse(-norm_fv_rotated(1:idx2_osim,2),spline(t_ortho,F_ortho_norm(:,1),time));
+
+        clear norm_fv_rotated force_vector
+        
+    end
+    clear F_ortho_norm F_ortho
         vv=R*Vec_GC2GEE(end,:)';
         h2gc=R*Vec_H2GCC(end,:)'*1000;
         radius = norm(h2gc)*0.5;
 
-        norm(Vec_GC2GEE(end,:))/norm(Vec_H2GCC(end,:))
+        %norm(Vec_GC2GEE(end,:))/norm(Vec_H2GCC(end,:))
         p=nsidedpoly(1000, 'Center', [0,0], 'Radius', radius);
         
-        plot(p, 'FaceColor', 'none',LineWidth=1,EdgeColor=[0 0.4470 0.7410],EdgeAlpha=1,LineStyle='--')
-        axis equal
+        %plot(p, 'FaceColor', 'none',LineWidth=1,EdgeColor=[0 0.4470 0.7410],EdgeAlpha=1,LineStyle='--')
+        % axis equal
         box off
         % leg(1:2:2*length(Conditions(2:end)))=Conditions(2:end);
         % legend(["" "Experimental" "" "None" "" "Estimated"],'Location','best')
@@ -409,10 +446,64 @@ for t=1:length(trials_names)
         ylabel("Y [mm]")   % corresponding to OpenSim Y axis (vertical pointing upwards)
         ax = gca;
         ax.FontSize = 15; 
-
+        xlim([-35 35])
+        ylim([-50 50])
         title(trials_names(t))
-        saveas(fig,fullfile(pwd,"Figures",trials_names(t)+"_"+models+"_GHJCF_Direction.pdf")); %name the figure here
+        saveas(fig,fullfile(pwd,"Figures Scaled",trials_names(t)+"_"+models+"_GHJCF_Direction.pdf")); %name the figure here
 end
+
+%% RMSE of direction
+trials_namess=["L Raise", "P Raise", "A Raise"];
+
+fig=figure;
+Cat= categorical(trials_namess);
+Cat=reordercats(Cat,trials_namess);
+hb=bar(Cat,(difference_rmse_y+difference_rmse_x)/2,'BarWidth',0.7);
+
+
+for k = 1:numel(hb)  
+    xtips = hb(k).XEndPoints;
+    ytips = hb(k).YEndPoints;
+    hb(k).FaceColor=color(k,:);
+    hb(k).EdgeColor=color(k,:);
+    %hb(k).LineWidth=2;
+
+end
+ 
+ylabel("RMSE [mm]",fontsize=15)
+box off
+ax = gca;
+ax.FontSize = 20;
+h = get(gca,'Children');
+
+saveas(fig,fullfile(pwd,"Figures Scaled","_"+models+"_RMSE_Direction.pdf")); %name the figure here
+
+%% Computational time
+
+trials_namess=["Lateral Raise", "P Raise"];
+
+fig=figure;
+Cat= categorical(trials_namess);
+Cat=reordercats(Cat,trials_namess);
+hb=bar(Cat,t_optim(1:2,1:8),'BarWidth',0.7);
+
+
+for k = 1:numel(hb)  
+    xtips = hb(k).XEndPoints;
+    ytips = hb(k).YEndPoints;
+    hb(k).FaceColor=color(k,:);
+    hb(k).EdgeColor=color(k,:);
+    %hb(k).LineWidth=2;
+
+end
+
+ylabel("Computational Time [s]",fontsize=15)
+box off
+ax = gca;
+ax.FontSize = 20;
+h = get(gca,'Children');
+
+saveas(fig,fullfile(pwd,"Figures Scaled","_"+models+"_Computational_Time.pdf")); %name the figure here
 
 %% GH-JCF Direction with no Stability Condition (None)
 folders=["None"];
@@ -429,11 +520,11 @@ for t=1:length(trials_names)
     
     indx1=find(Orthoload.Marker==1,1);
     if trials_names(t)=="Posterior Raise"
-        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=3.4,1)-1;
+        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=3.4,1)-1+indx1;
     elseif trials_names(t)=="Lateral Raise"
-        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=4,1)-1;
+        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=4,1)-1+indx1;
     else 
-        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=4.5,1)-1;
+        indx2=find(Orthoload.Time(indx1:end)-Orthoload.Time(indx1)>=4.5,1)-1+indx1;
     end
     
 
@@ -477,7 +568,7 @@ for t=1:length(trials_names)
         xlabel("X [mm]")   % corresponding roughly to OpenSim X axis (horizontal pointing forward)
         ylabel("Y [mm]")   % corresponding to OpenSim Y axis (vertical pointing upwards)
         ax = gca;
-        ax.FontSize = 18; 
+        ax.FontSize = 20; 
 
 end
 vv=R*Vec_GC2GEE(end,:)';
@@ -488,13 +579,13 @@ plot(p, 'FaceColor', 'none',LineWidth=1,LineStyle='--',EdgeColor=[0 0.4470 0.741
 title("None Model")
 ax=gca;
 ax.FontSize=20;
-saveas(fig,fullfile(pwd,"Figures","Loc_none.pdf")); %name the figure here
+saveas(fig,fullfile(pwd,"Figures Scaled","Loc_none.pdf")); %name the figure here
 axis equal
 
 %% GH-JCF Direction Sensitivity
 
 close all
-models="penalties";
+models="constraints";
 
 if models=="penalties"
     folders=["Curve w=1", "Curve", "Curve w=10"];
@@ -553,10 +644,10 @@ for t=1:length(trials_names)
     yl=sc*L.*sin(theta);
     
     hold on
-    % plot(yl,xl,LineWidth=2,LineStyle=":",Color=[color(2,:) 1]) %uncomment
+    plot(yl,xl,LineWidth=2,LineStyle=":",Color=[color(2,:) 1]) %uncomment
     % if you want to draw the polynomial perimeter
-    % plot(2*yl,2*xl,LineWidth=2,LineStyle=":",Color=[color(1,:) 1])
-    % plot(0.5*yl,0.5*xl,LineWidth=2,LineStyle=":",Color=[color(3,:) 1])
+    plot(2*yl,2*xl,LineWidth=2,LineStyle=":",Color=[color(1,:) 1])
+    plot(0.5*yl,0.5*xl,LineWidth=2,LineStyle=":",Color=[color(3,:) 1])
 
     axis equal
     ax=gca;
@@ -603,7 +694,7 @@ for t=1:length(trials_names)
 
 
         p=nsidedpoly(1000, 'Center', [0,0], 'Radius', radius);
-        plot(p, 'FaceColor', 'none',LineWidth=1,EdgeColor=[0 0.4470 0.7410],EdgeAlpha=1,LineStyle='--')
+        %plot(p, 'FaceColor', 'none',LineWidth=1,EdgeColor=[0 0.4470 0.7410],EdgeAlpha=1,LineStyle='--')
         axis equal
         box off
         leg(1:2:2*length(Conditions(2:end)))=Conditions(2:end);
@@ -616,10 +707,10 @@ for t=1:length(trials_names)
         ylabel("Y [mm]")      % corresponding to OpenSim Y axis (vertical pointing upwards)
         ax = gca;
         ax.FontSize = 18; 
-        ylim([-20 35])
-        xlim([-30 30])
+        ylim([-50 50])
+        xlim([-35 35])
         title(trials_names(t))
-        saveas(fig,fullfile(pwd,"Figures",trials_names(t)+"_Sensitivity_"+models+"NT.pdf")); %name the figure here
+        saveas(fig,fullfile(pwd,"Figures Scaled",trials_names(t)+"_Sensitivity_"+models+"NT.pdf")); %name the figure here
 end
 
 %% Plot Reserve Actuators vs Joint Moments
@@ -667,7 +758,7 @@ for t= 1:length(trials)
     clo_head=string(r_act.colheaders)';
     
     fig=figure;
-    fig.WindowState="maximized";
+    % fig.WindowState="maximized";
     for cord=1:length(coordinate)
         act=r_act.data(:,find(clo_head==coordinate(cord)+"_moment"));
         
@@ -700,7 +791,7 @@ for t= 1:length(trials)
             %legend("Joint", "R Actuator")
         end
     end
-mkdir(fullfile(pwd,"\Figures\ReserveActuators"));
-saveas(fig,fullfile(pwd,"Figures\ReserveActuators",trials_names(t)+"_"+models+"_ReserveActuator.pdf"));
+mkdir(fullfile(pwd,"\Figures Scaled\ReserveActuators"));
+saveas(fig,fullfile(pwd,"Figures Scaled\ReserveActuators",trials_names(t)+"_"+models+"_ReserveActuator.pdf"));
 
 end

@@ -43,7 +43,7 @@ dynamic_bounds = true;
 enforce_GH_constraint = false;
 % string indicating the name of the stability border to be enforced. 
 % It can be: circle, ellipse, polynomial or point.
-tag_con="ellipse";
+tag_con="polynomial";
 % string indicating which penalty to use in the cost function: 
 % "conditional", "planar", "curve", or "no_penalty"
 tag_cost= "curve";
@@ -51,12 +51,11 @@ tag_cost= "curve";
 execlude_locked=0;
 % execlude clavicle coordinates from matching
 execl_clav=0;
-% execlude scaula winging coordinate from matching
+% execlude scapula winging coordinate from matching
 execl_wing=0;    
 
-
 %% Select the imput model
-modelFile_2kg = append(path_to_repo, '\OpenSim Models\OrthoModel_2kgWeight.osim');
+modelFile_2kg = append(path_to_repo, '\OpenSim Models\OrthoModel_2kgWeight_scaled.osim');
 model_2kg = Model(modelFile_2kg);
 
 %Read a baseline model and re-assign the 2.4kg to the hand in the current
@@ -99,8 +98,8 @@ t_end=4; %set the end time
 %% Choose where to save the results
 % where to save the results
 Edit_tag='Test'; %name of the folder where results will be saved
-mkdir(fullfile(path_to_repo, ['Personal_Results\S8R\' Edit_tag]));
-saving_path = fullfile(path_to_repo, ['Personal_Results\S8R\' Edit_tag]);
+mkdir(fullfile(path_to_repo, ['Personal_Results\S8R\With Scaling\' Edit_tag]));
+saving_path = fullfile(path_to_repo, ['Personal_Results\S8R\With Scaling\' Edit_tag]);
 %Write a text file to describe the changes or the conditions you have made
 %in this trial
 Edit_description="Description_Here";

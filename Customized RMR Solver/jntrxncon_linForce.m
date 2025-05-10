@@ -74,7 +74,6 @@ norm_fv_rotated = R*norm_fv_in_ground*(norm(1000*Vec_H2GC)/cosTheta);
 
 %%
 
-
 % value of the constraint violation
 
 if tag_con=="polynomial"
@@ -85,6 +84,7 @@ if tag_con=="polynomial"
         theta=atan2d(-norm_fv_rotated(2),-norm_fv_rotated(3))+360;
     end
     L=(-5.430378773797311e-12*theta^6+5.880441464447251e-09*theta^5+-2.309728860559176e-06*theta^4+3.899916118022262e-04*theta^3+-0.024526120335986*theta^2+0.116047310713347*theta+50.915928515941545)/100;
+    L=1*L; %Change values for senstivity
     c=(fv(2)^2+fv(3)^2)/fv(1)^2-L^2; %polynomial Constraint
 
 elseif tag_con=="circle"
