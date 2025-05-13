@@ -56,6 +56,7 @@ If you experience any problems running the code, feel free to open an issue and 
 Please cite this work as:
 
 - Hasan, I. M. I., Belli, I., Seth, A. & Gutierrez-Farewik, E. M. Modeling glenohumeral stability in musculoskeletal simulations: A validation study with in vivo contact forces. bioRxiv DOI: 10.1101/2025.05.08.652806 (2025).
+  [Available here](https://www.biorxiv.org/content/early/2025/05/12/2025.05.08.652806)
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4accc270-59f7-44af-adb0-c02fddaaf384" width="200" >
