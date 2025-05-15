@@ -25,7 +25,7 @@ end
 close all
 path=fullfile(pwd,"S8R", "With Scaling");
 
-models="senstivity_planar"; %Change here which stability models you want to plot according to the conditions in the blelow if statement
+models="senstivity_curve"; %Change here which stability models you want to plot according to the conditions in the blelow if statement
 
 if models == "constraints"
     folders=["Point", "Circle", "Polynomial","Ellipse"];
@@ -70,7 +70,7 @@ elseif models=="all"
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
 
 elseif models=="rotator1"
-    folders=["Point", "Planar"];
+    folders=["Point", "Circle"];
     Conditions=["Orthoload" folders];
     color=[0.6350 0.0780 0.1840; 0 0.4470 0.7410; 0.4940 0.1840 0.5560; 1 0 1 ];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
@@ -134,7 +134,7 @@ for t= 1:length(trials)
     ylabel("GH-JCF [% BW]",FontSize=15)
     xlabel("Time (s)",FontSize=15)
     ax = gca;
-    ax.FontSize = 15; 
+    ax.FontSize = 20; 
     box off
     title(trials_names(t),FontSize=20)
     % legend(Conditions,Location="best",FontSize=20)
@@ -198,7 +198,7 @@ end
 ylabel("Estimation Error [% BW]")
 ylim([-200 300])
 ax = gca;
-ax.FontSize = 15;
+ax.FontSize = 20;
 box off
 saveas(fig,fullfile(pwd,"Figures Scaled",trials_names(t)+"_"+models+"_GHJCFMagnitude.RMSE.pdf"));
 
@@ -216,6 +216,8 @@ for t=1:length(trials_names)
     fig=figure;
     hold on
     for c=1:length(Conditions)-1
+        m_rotator(t,c)=mean(mean(rotator{t,c}));
+        m_rotator_indiv{t,c}=mean(rotator{t,c});
         plot(cond.time(1:idx2_osim),rotator{t,c}(:,1),color=color(c,:),LineWidth=2,LineStyle="-")
         plot(cond.time(1:idx2_osim),rotator{t,c}(:,2),color=color(c,:),LineWidth=2,LineStyle=":")
         plot(cond.time(1:idx2_osim),rotator{t,c}(:,3),color=color(c,:),LineWidth=2,LineStyle="--")
@@ -272,7 +274,7 @@ end
 ylabel("Mean Activation",fontsize=15)
 box off
 ax = gca;
-ax.FontSize = 15;
+ax.FontSize = 20;
 h = get(gca,'Children');
 
 ylim([0 0.5])
@@ -283,7 +285,7 @@ saveas(fig,fullfile(pwd,"Figures Scaled",models+"_RotatorCuffActivation.pdf")); 
 matlab.graphics.internal.setPrintPreferences('DefaultPaperPositionMode','auto')
 set(groot,'defaultFigurePaperPositionMode','auto')
 
-models="senstivity_polynomial"; %Change here 
+models="senstivity_planar"; %Change here 
 
 if models == "constraints"
     folders=["Point", "Circle", "Polynomial","Ellipse"];
@@ -372,9 +374,9 @@ for t=1:length(trials_names)
     %plot(x,y,LineWidth=1,LineStyle="--",Color=[color(4,:) 1]) % Plot Ellipse Perimeter
     
     hold on
-    plot(2*yl,2*xl,LineWidth=1,LineStyle="--",Color=color(1,:)) % Plot Polynomial Fit
-    plot(yl,xl,LineWidth=1,LineStyle="--",Color=color(2,:)) % Plot Polynomial Fit
-    plot(0.5*yl,0.5*xl,LineWidth=1,LineStyle="--",Color=color(3,:)) % Plot Polynomial Fit
+    % plot(2*yl,2*xl,LineWidth=1,LineStyle="--",Color=color(1,:)) % Plot Polynomial Fit
+    % plot(yl,xl,LineWidth=1,LineStyle="--",Color=color(2,:)) % Plot Polynomial Fit
+    % plot(0.5*yl,0.5*xl,LineWidth=1,LineStyle="--",Color=color(3,:)) % Plot Polynomial Fit
 
     axis equal
     ax=gca;
@@ -432,7 +434,7 @@ for t=1:length(trials_names)
         %norm(Vec_GC2GEE(end,:))/norm(Vec_H2GCC(end,:))
         p=nsidedpoly(1000, 'Center', [0,0], 'Radius', radius);
         
-        %plot(p, 'FaceColor', 'none',LineWidth=1,EdgeColor=[0 0.4470 0.7410],EdgeAlpha=1,LineStyle='--')
+        plot(p, 'FaceColor', 'none',LineWidth=1,EdgeColor=[0 0.4470 0.7410],EdgeAlpha=1,LineStyle='--')
         % axis equal
         box off
         % leg(1:2:2*length(Conditions(2:end)))=Conditions(2:end);
@@ -445,9 +447,9 @@ for t=1:length(trials_names)
         xlabel("X [mm]")   % corresponding roughly to OpenSim X axis (horizontal pointing forward)
         ylabel("Y [mm]")   % corresponding to OpenSim Y axis (vertical pointing upwards)
         ax = gca;
-        ax.FontSize = 15; 
-        xlim([-35 35])
-        ylim([-50 50])
+        ax.FontSize = 22; 
+        xlim([-30 30])
+        ylim([-30 30])
         title(trials_names(t))
         saveas(fig,fullfile(pwd,"Figures Scaled",trials_names(t)+"_"+models+"_GHJCF_Direction.pdf")); %name the figure here
 end
