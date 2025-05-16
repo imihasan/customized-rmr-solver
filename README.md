@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15445188.svg)](https://doi.org/10.5281/zenodo.15445188)
 # Customized RMR Solver 
 
 This repository includes a customized version of the **Rapid Muscle Redundancy (RMR) solver** integrated with different formulations of **glenohumeral stability**.  
