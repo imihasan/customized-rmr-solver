@@ -53,8 +53,10 @@ To generate the graphs used in the paper or other customized graphs:
 ## Issues
 If you experience any problems running the code, feel free to open an issue and we will try help you!
 
-## Publications
+## Citation
 Please cite this work as:
+
+- Hasan, I. M. I., Belli, I., Seth, A., & Gutierrez-Farewik, E. M. (2025). Modeling glenohumeral stability in musculoskeletal simulations (Code and paper materials). Zenodo. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15445188.svg)](https://doi.org/10.5281/zenodo.15445188)
 
 - Hasan, I. M. I., Belli, I., Seth, A. & Gutierrez-Farewik, E. M. Modeling glenohumeral stability in musculoskeletal simulations: A validation study with in vivo contact forces. bioRxiv DOI: 10.1101/2025.05.08.652806 (2025). [Available here](https://www.biorxiv.org/content/early/2025/05/12/2025.05.08.652806)
 
