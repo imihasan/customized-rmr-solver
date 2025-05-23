@@ -12,7 +12,8 @@ The original RMR solver is available at: [![DOI](https://zenodo.org/badge/DOI/10
 In this customized version, we proposed different formulations to model glenohumeral stability using:  
 
 - **Inequality constraints**, where the direction of the glenohumeral contact force was constrained within different stability border approximations:  
-  - A **point**  
+  - A **point**
+  - A **circle**   
   - An **ellipse**  
   - A **polynomial fit** of empirical values obtained from **concavity compression tests**  
 - **Penalty terms** in the objective function as:
