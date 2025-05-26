@@ -47,7 +47,7 @@ elseif tag_cost=="curve"
     fs=norm(fv_rotated)*sind(alpha); %tangential component to the curvature
     fc=norm(fv_rotated)*cosd(alpha); %nomal component to the curvature
     curve_Penalty=fs^2/fc^2;
-    c = sum(w.*(x.^2))+10*curve_Penalty; %Curve Penalty
+    c = sum(w.*(x.^2))+3*curve_Penalty; %Curve Penalty
 elseif tag_cost=="no_penalty"
     c = sum(w.*(x.^2)); %no penalty
 end
