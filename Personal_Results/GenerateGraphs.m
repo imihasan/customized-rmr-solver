@@ -25,7 +25,7 @@ end
 close all
 path=fullfile(pwd,"S8R", "With Scaling");
 
-models="senstivity_curve"; %Change here which stability models you want to plot according to the conditions in the blelow if statement
+models="senstivity_planar"; %Change here which stability models you want to plot according to the conditions in the blelow if statement
 
 if models == "constraints"
     folders=["Point", "Circle", "Polynomial","Ellipse"];
@@ -134,7 +134,7 @@ for t= 1:length(trials)
     ylabel("GH-JCF [% BW]",FontSize=15)
     xlabel("Time (s)",FontSize=15)
     ax = gca;
-    ax.FontSize = 20; 
+    ax.FontSize = 25; 
     box off
     title(trials_names(t),FontSize=20)
     % legend(Conditions,Location="best",FontSize=20)
@@ -226,7 +226,7 @@ for t=1:length(trials_names)
     %legend('Subscapularis','Infraspinatus','Supraspinatus','Teres Minor')
     box off
     ax = gca;
-    ax.FontSize = 20;
+    ax.FontSize = 25;
     title(trials_names(t))
     ylabel("Activation")
     xlabel("Time (s)")
@@ -447,7 +447,7 @@ for t=1:length(trials_names)
         xlabel("X [mm]")   % corresponding roughly to OpenSim X axis (horizontal pointing forward)
         ylabel("Y [mm]")   % corresponding to OpenSim Y axis (vertical pointing upwards)
         ax = gca;
-        ax.FontSize = 22; 
+        ax.FontSize = 25; 
         xlim([-30 30])
         ylim([-30 30])
         title(trials_names(t))
