@@ -1,4 +1,4 @@
-function [optimizationStatus, unfeasibility_flags, tOptim, file_results] = RMR_analysis(subject_considered, model_original, ...
+  function [optimizationStatus, unfeasibility_flags, tOptim, file_results] = RMR_analysis(subject_considered, model_original, ...
     trc_file, motion_file, weight_coord, time_interval, dynamic_activation_bounds, flag_GH_enforced, execlude_locked, execl_clav, execl_wing, t_end, saving_path, tag_con, tag_cost)
 % Rapid Muscle Redundancy (RMR) solver, leveraging OpenSim API.
 % Starting from experimental marker data (in .trc format) the optimal
@@ -396,7 +396,8 @@ unfeasibility_flags = zeros(size(numTimePoints));
 % Create the FMINCON options structure.
 options = optimoptions('fmincon','Display','none', ...
      'TolCon',1e-7,'TolFun',1e-7,'TolX',1e-3,'MaxFunEvals',100000, ...
-     'MaxIter',10000,'Algorithm','sqp', 'StepTolerance', 1e-8,'ScaleProblem',false,'FiniteDifferenceType','forward'); %, 'DiffMinChange', 1.0e-2);
+     'MaxIter',10000,'Algorithm','sqp', 'StepTolerance', 1e-8,...
+     'ScaleProblem',false,'FiniteDifferenceType','forward'); %, 'DiffMinChange', 1.0e-2);
  
 % Construct initial guess and bounds arrays
 numCoords = length(coordNames);
@@ -553,7 +554,7 @@ for time_instant = 1:numTimePoints
         [x,~,exitflag,output] = fmincon(@(x)cost(x, w, Vec_H2GC, Vec_GC2GE, A_eq_force, F_r0, tag_cost), x0, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, Vec_GC2GE, A_eq_force, F_r0, tag_con), options);
         if exitflag ==0
             % call the solver again, starting from current x, in case the maximum iterations are exceeded
-            [x,~,exitflag,output] = fmincon(@(x)cost(x, w, Vec_H2GC,Vec_GC2GE,maxAngle, A_eq_force, F_r0, tag_cost), x, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, Vec_GC2GE, A_eq_force, F_r0, tag_con), options);
+            [x,~,exitflag,output] = fmincon(@(x)cost(x, w, Vec_H2GC,Vec_GC2GE, A_eq_force, F_r0, tag_cost), x, [], [], A_eq_acc, Beq, lb, ub, @(x)jntrxncon_linForce(x, Vec_H2GC, Vec_GC2GE, A_eq_force, F_r0, tag_con), options);
         end
         if exitflag<0 && time_instant>1
             % call the solver again, starting from previous optimum found,

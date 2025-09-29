@@ -30,6 +30,8 @@ function [c, ceq] = jntrxncon_linForce(x, Vec_H2GC, Vec_GC2GE, A_f, F_r0,tag_con
 % formulation of the force
 %
 % author: Italo Belli (i.belli@tudelft.nl) 2022
+%Edited By: Ibrahim Mohammed Hasan (imihasan@kth.se) 2023, KTH MoveAbility Lab,
+%KTH Royal Institute of Technology, Stockholm, Sweden.
 
 import org.opensim.modeling.*;
 

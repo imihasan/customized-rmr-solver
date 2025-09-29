@@ -46,7 +46,7 @@ enforce_GH_constraint = false;
 tag_con="polynomial";
 % string indicating which penalty to use in the cost function: 
 % "conditional", "planar", "curve", or "no_penalty"
-tag_cost= "curve";
+tag_cost= "no_penalty";
 % execlude locked coordinates from matching
 execlude_locked=0;
 % execlude clavicle coordinates from matching
@@ -93,7 +93,7 @@ weight_coord = [weight_abd, weight_elev, weight_up_rot, weigth_wing];
 
 %% Downsampling
 time_interval = 1;
-t_end=4; %set the end time
+t_end=3.4; %set the end time
 
 %% Choose where to save the results
 % where to save the results

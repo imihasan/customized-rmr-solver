@@ -1,5 +1,5 @@
 function c = cost(x, w, Vec_H2GC, Vec_GC2GE, A_f, F_r0, tag_cost)
-
+%% A cost function implementing the GH stability as a penalty
 % Author: Ibrahim Mohammed I. Hasan (imihasan@kth.se) 2025
 
 % computing the reaction force vector at the given joint

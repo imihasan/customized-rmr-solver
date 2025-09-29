@@ -23,9 +23,9 @@ for f=1:length(folders)-2
 end
 %% Plot contact force magnitude
 close all
-path=fullfile(pwd,"S8R", "With Scaling");
+path=fullfile(pwd,"S8R/With Scaling");
 
-models="senstivity_planar"; %Change here which stability models you want to plot according to the conditions in the blelow if statement
+models="all"; %Change here which stability models you want to plot according to the conditions in the blelow if statement
 
 if models == "constraints"
     folders=["Point", "Circle", "Polynomial","Ellipse"];
@@ -82,9 +82,9 @@ elseif models=="rotator2"
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
 
 elseif models=="scaled"
-    folders=["Planar", "Test"];
+    folders=["Planar scaled down 10%", "Planar scaled down 5%", "Planar"];
     Conditions=["Orthoload" folders];
-    color=[ 0.3010 0.7450 0.9330; 0.4940 0.1840 0.5560];
+    color=[ 0.4660 0.6740 0.1880; 0 0.4470 0.7410; 0.6350 0.0780 0.1840];
     trials_names=["Lateral Raise"];
 end
 
@@ -151,8 +151,8 @@ for t= 1:length(trials)
     ylim([0 400])
     saveas(fig,fullfile(pwd,"Figures Scaled",trials_names(t)+"_"+models+"_GHJCFMagnitude.pdf")); %name your file here
 end
-
-%% RPlot root mean square error (RMSE)
+legend("othoload","up", "down", "generic")
+%% Plot root mean square error (RMSE)
 trials_namess=["L Raise", "P Raise", "A Raise"];
 for t=1:length(trials_names)
     for c=1:length(Conditions)-1
@@ -220,7 +220,7 @@ for t=1:length(trials_names)
         m_rotator_indiv{t,c}=mean(rotator{t,c});
         plot(cond.time(1:idx2_osim),rotator{t,c}(:,1),color=color(c,:),LineWidth=2,LineStyle="-")
         plot(cond.time(1:idx2_osim),rotator{t,c}(:,2),color=color(c,:),LineWidth=2,LineStyle=":")
-        plot(cond.time(1:idx2_osim),rotator{t,c}(:,3),color=color(c,:),LineWidth=2,LineStyle="--")
+        %plot(cond.time(1:idx2_osim),rotator{t,c}(:,3),color=color(c,:),LineWidth=2,LineStyle="--")
         % plot(cond.time(1:idx2_osim),rotator{t,c}(:,4),color=color(c,:),LineWidth=2,LineStyle="-.")
     end 
     %legend('Subscapularis','Infraspinatus','Supraspinatus','Teres Minor')
@@ -248,11 +248,14 @@ fig=figure;
 trials_namess=["L Raise", "P Raise", "A Raise"];
 Cat= categorical(trials_namess);
 Cat=reordercats(Cat,trials_namess);
-hb=bar(Cat,m_rotator,'EdgeColor','k','BarWidth',0.4);
+hb=bar(Cat,m_rotator,'EdgeColor','k','BarWidth',0.2);
 
 
 color1 = [0.9 0.7 1 ; 0.8 1 1;
    0.9 1 0.1; 0.9 0.8 0.3];
+
+color1 = [0.9 0.9 0.9 ; 0.7 0.7 0.7;
+   0.5 0.5 0.5; 0.3 0.3 0.3];
 
 hold on
 
@@ -265,7 +268,7 @@ for k = 1:numel(hb)
     hold on
     for i=1:length(xtips)
         for s=1:4
-            bl=scatter(xtips(i),m_rotator_indiv{i,k}(s),100,color1(s,:),'filled','o','MarkerEdgeColor','k',LineWidth=1);
+            bl=scatter(xtips(i)+0.06,m_rotator_indiv{i,k}(s),50,color1(s,:),'filled','o','MarkerEdgeColor','k',LineWidth=1);
         end
         
     end
@@ -277,7 +280,7 @@ ax = gca;
 ax.FontSize = 20;
 h = get(gca,'Children');
 
-ylim([0 0.5])
+ylim([0 0.3])
 title(models)
 saveas(fig,fullfile(pwd,"Figures Scaled",models+"_RotatorCuffActivation.pdf")); %name your file here
 
@@ -285,7 +288,7 @@ saveas(fig,fullfile(pwd,"Figures Scaled",models+"_RotatorCuffActivation.pdf")); 
 matlab.graphics.internal.setPrintPreferences('DefaultPaperPositionMode','auto')
 set(groot,'defaultFigurePaperPositionMode','auto')
 
-models="senstivity_planar"; %Change here 
+models="scaled"; %Change here 
 
 if models == "constraints"
     folders=["Point", "Circle", "Polynomial","Ellipse"];
@@ -323,6 +326,11 @@ elseif models=="all"
     Conditions=["Orthoload" folders];
     color=[0.6350 0.0780 0.1840; 0 0.4470 0.7410; 0.4660 0.6740 0.1880;  0.9290 0.6940 0.1250; 0.8500 0.3250 0.0980; 0.3010 0.7450 0.9330; 0.4940 0.1840 0.5560; 1 0 1 ];
     trials_names=["Lateral Raise", "Posterior Raise", "Anterior Raise"];
+elseif models=="scaled"
+    folders=["Planar scaled down 10%", "Planar scaled down 5%", "Planar"];
+    Conditions=["Orthoload" folders];
+    color=[ 0.4660 0.6740 0.1880; 0 0.4470 0.7410; 0.6350 0.0780 0.1840];
+    trials_names=["Lateral Raise"];
 end
 
 
