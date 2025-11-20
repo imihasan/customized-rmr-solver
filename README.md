@@ -57,7 +57,7 @@ If you experience any problems running the code, feel free to open an issue and 
 ## Citation
 Please cite this work as:
 
-- I. M. I. Hasan, I. Belli, A. Seth and E. M. Gutierrez-Farewik, "Modeling glenohumeral stability in musculoskeletal simulations: A validation study with in vivo contact forces," in IEEE Transactions on Neural Systems and Rehabilitation Engineering, [![DOI]](https://doi.org/10.1109/TNSRE.2025.3635012)
+- I. M. I. Hasan, I. Belli, A. Seth and E. M. Gutierrez-Farewik, "Modeling glenohumeral stability in musculoskeletal simulations: A validation study with in vivo contact forces," in IEEE Transactions on Neural Systems and Rehabilitation Engineering, doi: 10.1109/TNSRE.2025.3635012. **DOI:** [10.1109/TNSRE.2025.3635012](https://doi.org/10.1109/TNSRE.2025.3635012)
   
 - Hasan, I. M. I., Belli, I., Seth, A., & Gutierrez-Farewik, E. M. (2025). Modeling glenohumeral stability in musculoskeletal simulations (Code and paper materials). Zenodo. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15445188.svg)](https://doi.org/10.5281/zenodo.15445188)
 
@@ -66,7 +66,7 @@ Please cite this work as:
 
 
 ## Funding
-This work was funded by the Promobilia Foundation, and the Swedish Research Council, Stockholm, Sweden. 
+This work was funded by the Promobilia Foundation, and the Swedish Research Council, Stockholm, Sweden.   
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1ea03a52-8ffa-4abf-b911-5e29c71f41d0" width="800" >
